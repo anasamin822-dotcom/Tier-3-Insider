@@ -5,8 +5,8 @@
 <title>TIER-3 INSIDER — Real Reviews from Real Students</title>
 
 
-<script src="./TIER-3 INSIDER — Real Reviews from Real Students_files/chart.js.download"></script>
-<script src="./TIER-3 INSIDER — Real Reviews from Real Students_files/email.min.js.download"></script>
+<script src="./vendor/chart.umd.min.js"></script>
+
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 :root {
@@ -614,7 +614,7 @@ Type a college name or ask any question!</div>
         <div id="fl-email-step" class="form-space">
           <div><label>Email Address</label><div class="input-wrap"><span>✉</span><input type="email" id="fl-email" placeholder="your@email.com" onkeydown="if(event.key===&#39;Enter&#39;)flSendOtp()"></div></div>
           <div id="fl-err" style="color:#f87171;font-size:0.78rem;display:none;"></div>
-          <button class="btn-primary w-full" onclick="flSendOtp()" id="fl-send-btn">Send OTP →</button>
+          <button class="btn-primary w-full" onclick="flSendOtp()" id="fl-send-btn">Continue in demo →</button>
         </div>
         <div id="fl-otp-step" class="form-space" style="display: none; flex-direction: column;">
           <div class="otp-display">
@@ -2986,8 +2986,8 @@ Type a college name or ask any question!</div>
       </div>
       <div class="card" style="padding:2rem;">
         <div class="form-space">
-          <div><label>Admin Password</label><div class="input-wrap"><span>🔑</span><input type="password" id="admin-pw" placeholder="Enter Password" onkeydown="if(event.key===&#39;Enter&#39;)adminLogin()"></div></div>
-          <div class="alert-info"><p style="color:var(--orange2);font-size:0.78rem;">Enter your admin credentials to continue.</p></div>
+          <div><label>Admin Email</label><input type="email" id="admin-email" autocomplete="username" value="anasamin822@gmail.com"></div><div><label>Admin Password</label><div class="input-wrap"><span>🔑</span><input type="password" id="admin-pw" placeholder="Enter Password" onkeydown="if(event.key===&#39;Enter&#39;)adminLogin()"></div></div>
+          <div class="alert-info"><p style="color:var(--orange2);font-size:0.78rem;">Sign in with your Supabase administrator account.</p></div>
           <div id="admin-err" style="color:#f87171;font-size:0.78rem;display:none;"></div>
           <button class="btn-primary w-full" onclick="adminLogin()">Login →</button>
         </div>
@@ -3216,125 +3216,109 @@ const CHATBOT_REPLIES = [
   "Start competitive programming in 1st year — Codeforces, LeetCode. It makes a massive difference in placements.",
 ];
 
-// ==================== JSONBIN BACKEND ====================
-const JSONBIN_ID = '69fe4fce250b1311c3228f10';
-const JSONBIN_KEY = '$2a$10$04./5yvd/oPvnKSLyP28nefzvS.33JcAMe93QoifhaFNBBnI7vReW';
-const JSONBIN_URL = 'https://api.jsonbin.io/v3/b/' + JSONBIN_ID;
-
-// In-memory cache so we don't hit the API on every single read
+// Public project configuration only. All privileged access is checked in Postgres.
+const SUPABASE_URL = 'https://xkcbtnndrufcgoyerjsi.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_ki35JFwXafJJLwGZFjZK_A_zrzhbQEP';
+let _adminSession = null;
+let _isAdmin = false;
 let _dbCache = null;
 let _dbCacheTime = 0;
-const CACHE_TTL = 30000; // 30 seconds
-
+const CACHE_TTL = 30000;
+async function sbRequest(path, body, token) {
+  const res = await fetch(SUPABASE_URL + path, {
+    method: body === undefined ? 'GET' : 'POST',
+    headers: {'Content-Type':'application/json', apikey:SUPABASE_ANON_KEY,
+      ...((token || _adminSession?.access_token) ? {Authorization:'Bearer '+(token || _adminSession.access_token)} : {})},
+    ...(body === undefined ? {} : {body:JSON.stringify(body)})
+  });
+  const data = await res.json().catch(()=>null);
+  if (!res.ok) throw new Error(data?.msg || data?.message || 'Request failed. Please try again.');
+  return data;
+}
+async function restoreAdmin() {
+  localStorage.removeItem('t3i_admin');
+  const saved = JSON.parse(sessionStorage.getItem('t3i_admin_session') || 'null');
+  if (!saved) return;
+  try {
+    _adminSession = await sbRequest('/auth/v1/token?grant_type=refresh_token', {refresh_token:saved.refresh_token});
+    _isAdmin = await sbRequest('/rest/v1/rpc/t3i_is_admin', {});
+    if (!_isAdmin) throw new Error('Not an admin');
+    sessionStorage.setItem('t3i_admin_session',JSON.stringify(_adminSession));
+  } catch(e) { _adminSession=null; _isAdmin=false; sessionStorage.removeItem('t3i_admin_session'); }
+}
 async function dbRead(forceRefresh) {
-  const now = Date.now();
-  if (!forceRefresh && _dbCache && (now - _dbCacheTime) < CACHE_TTL) return _dbCache;
-  try {
-    const res = await fetch(JSONBIN_URL + '/latest', {
-      headers: { 'X-Master-Key': JSONBIN_KEY, 'X-Bin-Meta': 'false' }
-    });
-    const json = await res.json();
-    _dbCache = json;
-    _dbCacheTime = now;
-    return json;
-  } catch(e) {
-    console.warn('JSONbin read failed, using cache or defaults:', e);
-    return _dbCache || getDefaultDb();
-  }
+  if (!forceRefresh && _dbCache && Date.now()-_dbCacheTime<CACHE_TTL) return _dbCache;
+  const data = await sbRequest('/rest/v1/rpc/t3i_read', {});
+  if (!data || !Array.isArray(data.reviews)) throw new Error('Platform data unavailable');
+  _dbCache=data; _dbCacheTime=Date.now(); return data;
 }
-
 async function dbWrite(data) {
-  try {
-    _dbCache = data;
-    _dbCacheTime = Date.now();
-    await fetch(JSONBIN_URL, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-Master-Key': JSONBIN_KEY
-      },
-      body: JSON.stringify(data)
-    });
-  } catch(e) {
-    console.warn('JSONbin write failed:', e);
-  }
+  await sbRequest('/rest/v1/rpc/t3i_admin_write', {payload:data});
+  _dbCache=data; _dbCacheTime=Date.now();
 }
-
 function getDefaultDb() {
-  return {
-    reviews: DEMO_REVIEWS,
-    seniors: DEMO_SENIORS,
-    pending_reviews: [],
-    pending_seniors: [],
-    pending_payments: [],
-    paid_emails: [],
-    voted: [],
-    messages: []
-  };
+  return {reviews:DEMO_REVIEWS,seniors:DEMO_SENIORS,pending_reviews:[],pending_seniors:[],pending_payments:[],paid_emails:[],voted:[],messages:[]};
 }
-
-// Sync wrappers reading from cache (populated by init)
 const esc = (v) => String(v ?? '').replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const getReviews = () => _dbCache ? (_dbCache.reviews || []) : JSON.parse(localStorage.getItem('t3i_reviews')||'[]');
-const getSeniors = () => _dbCache ? (_dbCache.seniors || []) : JSON.parse(localStorage.getItem('t3i_seniors')||'[]');
-const getPendingReviews = () => _dbCache ? (_dbCache.pending_reviews || []) : JSON.parse(localStorage.getItem('t3i_pending_reviews')||'[]');
-const getPendingSeniors = () => _dbCache ? (_dbCache.pending_seniors || []) : JSON.parse(localStorage.getItem('t3i_pending_seniors')||'[]');
-const getPendingPayments = () => _dbCache ? (_dbCache.pending_payments || []) : JSON.parse(localStorage.getItem('t3i_pending_payments')||'[]');
-const getPaidEmails = () => _dbCache ? (_dbCache.paid_emails || []) : JSON.parse(localStorage.getItem('t3i_paid_emails')||'[]');
-const getVoted = () => JSON.parse(localStorage.getItem('t3i_voted')||'[]'); // local only (per-device)
+const getReviews = () => _dbCache?.reviews || [];
+const getSeniors = () => _dbCache?.seniors || [];
+const getPendingReviews = () => _dbCache?.pending_reviews || [];
+const getPendingSeniors = () => _dbCache?.pending_seniors || [];
+const getPendingPayments = () => _dbCache?.pending_payments || [];
+const getPaidEmails = () => _dbCache?.paid_emails || [];
+const getVoted = () => JSON.parse(localStorage.getItem('t3i_voted')||'[]');
 const getFresherEmail = () => localStorage.getItem('t3i_fresher_email');
 const getSeniorEmail = () => localStorage.getItem('t3i_senior_email');
-const hasPaidAccess = (email) => getPaidEmails().includes(email);
-const hasSeniorChatAccess = (email) => getPaidEmails().includes(email+'_senior');
-
+// Review browsing is public. These local demo identities are never authentication.
+const hasPaidAccess = () => true;
+const hasSeniorChatAccess = () => false;
 async function init() {
-  // Show loading overlay
-  const overlay = document.createElement('div');
-  overlay.id = 'db-loading';
-  overlay.style.cssText = 'position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;';
-  overlay.innerHTML = '<div style="font-family:Bebas Neue;font-size:2rem;letter-spacing:0.1em;background:linear-gradient(to right,#ff4d2e,#ff7a5c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">TIER-3 INSIDER</div><div style="color:#888;font-size:0.82rem;">Loading platform data...</div><div style="width:48px;height:48px;border:3px solid rgba(255,77,46,0.2);border-top-color:#ff4d2e;border-radius:50%;animation:spin 0.8s linear infinite;"></div>';
-  document.body.appendChild(overlay);
-
-  try {
-    const db = await dbRead(true);
-    // If JSONbin is empty/fresh, seed it with demo data
-    if (!db.reviews || !db.reviews.length) {
-      const seedDb = getDefaultDb();
-      await dbWrite(seedDb);
-    }
-  } catch(e) {
-    console.warn('Init failed, running in offline mode');
-    _dbCache = getDefaultDb();
+  document.querySelectorAll('.page').forEach(page=>{const notice=document.createElement('p');notice.style.cssText='margin:0 auto 20px;padding:12px 16px;max-width:1152px;border:1px solid #555;border-radius:8px;color:var(--muted);font-size:13px;line-height:1.5';notice.textContent='Reviews are free to browse. Private chat and payments are paused. Member email forms are for the demo only.';(page.querySelector('.container') || page.firstElementChild || page).prepend(notice);});
+  ['t3i_paid_emails','t3i_pending_reviews','t3i_pending_seniors','t3i_pending_payments','t3i_reviews','t3i_seniors'].forEach(k=>localStorage.removeItem(k));
+  await restoreAdmin();
+  try { await dbRead(true); }
+  catch(e) {
+    _dbCache=getDefaultDb();
+    const notice=document.createElement('p'); notice.setAttribute('role','alert');
+    notice.style.cssText='padding:12px;text-align:center;background:#422;color:#fff';
+    notice.textContent='Live data is unavailable. Showing sample reviews; submissions may be unavailable.';
+    document.body.prepend(notice);
   }
-
-  const el = document.getElementById('db-loading');
-  if (el) el.remove();
   updateLandingStats();
 }
-
-// Helper to get full db object safely
-function getDb() {
-  return _dbCache || getDefaultDb();
+function getDb() { return _dbCache || getDefaultDb(); }
+async function saveReviews(arr) { const db=getDb(); await dbWrite({...db,reviews:arr}); }
+async function saveSeniors(arr) { const db=getDb(); await dbWrite({...db,seniors:arr}); }
+async function saveQueue(queue,arr) {
+  if (_isAdmin) { await dbWrite({...getDb(),[queue]:arr}); return; }
+  const item=arr[arr.length-1];
+  if (!item) throw new Error('Nothing to submit');
+  await sbRequest('/rest/v1/rpc/t3i_submit',{queue,payload:item});
+  _dbCache[queue]=[];
 }
-
-// Async save helpers
-async function saveReviews(arr) {
-  const db = getDb(); db.reviews = arr; await dbWrite(db);
-}
-async function saveSeniors(arr) {
-  const db = getDb(); db.seniors = arr; await dbWrite(db);
-}
-async function savePendingReviews(arr) {
-  const db = getDb(); db.pending_reviews = arr; await dbWrite(db);
-}
-async function savePendingSeniors(arr) {
-  const db = getDb(); db.pending_seniors = arr; await dbWrite(db);
-}
-async function savePendingPayments(arr) {
-  const db = getDb(); db.pending_payments = arr; await dbWrite(db);
-}
+async function savePendingReviews(arr) { await saveQueue('pending_reviews',arr); }
+async function savePendingSeniors(arr) { await saveQueue('pending_seniors',arr); }
+async function savePendingPayments(arr) { await saveQueue('pending_payments',arr); }
 async function savePaidEmails(arr) {
-  const db = getDb(); db.paid_emails = arr; await dbWrite(db);
+  if (!_isAdmin) return; // Demo actions cannot create real payment entitlements.
+  await dbWrite({...getDb(),paid_emails:arr});
+}
+async function adminLogin() {
+  const err=document.getElementById('admin-err'); err.style.display='none';
+  try {
+    _adminSession=await sbRequest('/auth/v1/token?grant_type=password',{
+      email:document.getElementById('admin-email').value.trim(),password:document.getElementById('admin-pw').value
+    });
+    _isAdmin=await sbRequest('/rest/v1/rpc/t3i_is_admin',{});
+    if (!_isAdmin) throw new Error('This account is not an administrator.');
+    sessionStorage.setItem('t3i_admin_session',JSON.stringify(_adminSession));
+    document.getElementById('admin-pw').value=''; await dbRead(true); showPage('admin');
+  } catch(e) { _isAdmin=false; _adminSession=null; err.textContent=e.message; err.style.display='block'; }
+}
+async function adminLogout() {
+  try { if (_adminSession) await sbRequest('/auth/v1/logout',{}); } catch(e) { console.warn('Session logout failed'); }
+  _adminSession=null; _isAdmin=false; _dbCache=null; sessionStorage.removeItem('t3i_admin_session');
+  localStorage.removeItem('t3i_admin'); await dbRead(true); showPage('landing');
 }
 
 // ==================== STATE ====================
@@ -3397,55 +3381,14 @@ function updateLandingStats() {
 const EMAILJS_SERVICE_ID = 'service_tulas';
 const EMAILJS_TEMPLATE_ID = 'template_48wb22h';
 const EMAILJS_PUBLIC_KEY = '4AcEmpZVl4ybih7w2';
-(function() { emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY }); })();
+
 
 // ==================== FRESHER LOGIN ====================
 function flSendOtp() {
-  const email = document.getElementById('fl-email').value.trim();
-  if (!email || !email.includes('@') || !email.includes('.')) { showErr('fl-err','Please enter a valid email address'); return; }
-  const btn = document.getElementById('fl-send-btn');
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-  // Generate OTP — store obfuscated, never log
-  const otp = Math.floor(100000 + Math.random() * 900000).toString();
-  flGeneratedOtp = btoa(otp); // base64 encode — not console-readable as plain text
-
-  function showOtpStep() {
-    document.getElementById('fl-otp-sent-to').textContent = 'Sent to: ' + email.replace(/(.{3}).*(@.*)/, '$1****$2');
-    document.getElementById('fl-email-step').style.display = 'none';
-    document.getElementById('fl-otp-step').style.display = 'flex';
-    document.getElementById('fl-otp-step').style.flexDirection = 'column';
-    btn.textContent = 'Send OTP →';
-    btn.disabled = false;
-  }
-
-  // Try EmailJS; if it fails or times out, show OTP on screen as fallback
-  let done = false;
-  const timeout = setTimeout(() => {
-    if (!done) {
-      done = true;
-      // Fallback: show OTP directly so local/offline testing works
-      showOtpStep();
-      // Show OTP hint box for dev/local use
-      const hint = document.getElementById('fl-otp-hint');
-      if (hint) { hint.textContent = '📋 Dev Mode — Your OTP: ' + otp; hint.style.display = 'block'; }
-    }
-  }, 5000);
-
-  emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-    to_email: email,
-    otp: otp
-  }).then(() => {
-    if (!done) { done = true; clearTimeout(timeout); showOtpStep(); }
-  }).catch(() => {
-    if (!done) {
-      done = true;
-      clearTimeout(timeout);
-      showOtpStep();
-      const hint = document.getElementById('fl-otp-hint');
-      if (hint) { hint.textContent = '📋 Email service unavailable — Your OTP: ' + otp; hint.style.display = 'block'; }
-    }
-  });
+ const email=document.getElementById('fl-email').value.trim();
+ if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { showErr('fl-err','Enter a valid email');return; }
+ localStorage.setItem('t3i_fresher_email',email);
+ showOnboarding();
 }
 function flEmailStep() {
   document.getElementById('fl-email-step').style.display='flex';
@@ -3546,27 +3489,23 @@ function srStep2Next() {
   srData.bio = bio;
   srGoStep(3);
 }
-// ==================== CLOUDINARY UPLOAD ====================
-const CLOUDINARY_CLOUD = 'dujdccsez';
-const CLOUDINARY_PRESET = 'tier3_insider';
-const CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/' + CLOUDINARY_CLOUD + '/image/upload';
-
+// Identity documents are stored privately. Only an authenticated admin can view them.
 async function uploadToCloudinary(file, onProgress) {
-  return new Promise((resolve, reject) => {
-    const formData = new FormData();
-    formData.append('file', file);
-    formData.append('upload_preset', CLOUDINARY_PRESET);
-    formData.append('folder', 'tier3_verifications');
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', CLOUDINARY_URL);
-    xhr.upload.onprogress = (e) => { if (onProgress && e.lengthComputable) onProgress(Math.round(e.loaded/e.total*100)); };
-    xhr.onload = () => {
-      if (xhr.status === 200) { resolve(JSON.parse(xhr.responseText).secure_url); }
-      else { reject(new Error('Upload failed: ' + xhr.status)); }
-    };
-    xhr.onerror = () => reject(new Error('Network error during upload'));
-    xhr.send(formData);
-  });
+ const ext={'image/jpeg':'jpg','image/png':'png','application/pdf':'pdf'}[file.type];
+ if(!ext || file.size>5*1024*1024) throw new Error('Use JPG, PNG or PDF, under 5MB');
+ const path=crypto.randomUUID()+'.'+ext;
+ const res=await fetch(SUPABASE_URL+'/storage/v1/object/tier3-verification/'+path,{
+   method:'POST',headers:{apikey:SUPABASE_ANON_KEY,'Content-Type':file.type},body:file
+ });
+ if(!res.ok) throw new Error('Upload failed. Please try again.');
+ if(onProgress)onProgress(100);return 'private:'+path;
+}
+async function viewPrivateFile(path) {
+ if(!_isAdmin || !/^private:[0-9a-f-]{36}\.(jpg|png|pdf)$/.test(path)) { alert('No private file is available');return; }
+ try {
+  const result=await sbRequest('/storage/v1/object/sign/tier3-verification/'+path.slice(8),{expiresIn:60});
+  window.open(SUPABASE_URL+'/storage/v1'+result.signedURL,'_blank','noopener');
+ } catch(e) { alert(e.message); }
 }
 
 // srData stores uploaded URLs
@@ -3583,8 +3522,8 @@ async function sr3HandlePhoto(e) {
     srPhotoUrl = await uploadToCloudinary(file, pct => {
       const el = document.getElementById('photo-pct'); if (el) el.textContent = pct;
     });
-    document.getElementById('sr3-photo-content').innerHTML = '<div style="font-size:1.5rem;">✅</div><div style="font-size:0.82rem;color:#22c55e;margin-top:4px;">Photo uploaded successfully</div>';
-    document.getElementById('sr3-photo-name').textContent = file.name + ' — Verified';
+    document.getElementById('sr3-photo-content').innerHTML = '<div style="font-size:1.5rem;">✅</div><div style="font-size:0.82rem;color:#22c55e;margin-top:4px;">Photo uploaded privately</div>';
+    document.getElementById('sr3-photo-name').textContent = file.name + ' - Uploaded, awaiting review';
     document.getElementById('sr3-photo-name').style.display = 'block';
   } catch(err) {
     document.getElementById('sr3-photo-content').innerHTML = '<div style="font-size:1.5rem;">❌</div><div style="font-size:0.82rem;color:#ef4444;margin-top:4px;">Upload failed. Try again.</div>';
@@ -3603,18 +3542,18 @@ async function sr3HandleId(e) {
       const el = document.getElementById('id-pct'); if (el) el.textContent = pct;
     });
     document.getElementById('sr3-id-content').innerHTML = '<div style="font-size:1.5rem;">✅</div><div style="font-size:0.82rem;color:#22c55e;margin-top:4px;">College ID uploaded successfully</div>';
-    document.getElementById('sr3-id-name').textContent = file.name + ' — Verified';
+    document.getElementById('sr3-id-name').textContent = file.name + ' - Uploaded, awaiting review';
     document.getElementById('sr3-id-name').style.display = 'block';
   } catch(err) {
     document.getElementById('sr3-id-content').innerHTML = '<div style="font-size:1.5rem;">❌</div><div style="font-size:0.82rem;color:#ef4444;margin-top:4px;">Upload failed. Try again.</div>';
   }
 }
-function srFinalSubmit() {
+async function srFinalSubmit() {
   const hasPhoto = document.getElementById('sr3-photo').files.length > 0;
   const hasId = document.getElementById('sr3-id').files.length > 0;
   const err = document.getElementById('sr3-err');
-  if (!hasPhoto) { err.textContent='Please upload your photo for admin verification'; err.style.display='block'; return; }
-  if (!hasId) { err.textContent='Please upload your College ID card'; err.style.display='block'; return; }
+  if (!hasPhoto || !srPhotoUrl) { err.textContent='Please upload your photo for admin verification'; err.style.display='block'; return; }
+  if (!hasId || !srIdUrl) { err.textContent='Please upload your College ID card'; err.style.display='block'; return; }
   err.style.display='none';
   const pending = getPendingSeniors();
   pending.push({
@@ -3632,7 +3571,7 @@ function srFinalSubmit() {
     has_photo_upload: !!srPhotoUrl, has_id_upload: !!srIdUrl,
     submitted_at: new Date().toISOString()
   });
-  savePendingSeniors(pending);
+  try { await savePendingSeniors(pending); } catch(e) { alert(e.message); return; }
   // Hide all steps, show success
   [1,2,3].forEach(i => document.getElementById('sr-step-'+i+'-wrap').style.display='none');
   document.getElementById('sr-steps-bar').style.display='none';
@@ -3685,7 +3624,7 @@ function renderUpskillingBanner() {
 
 function renderReviews() {
   const email = getFresherEmail();
-  const hasAccess = email && hasPaidAccess(email);
+  const hasAccess = true;
   document.getElementById('r-paywall').style.display = hasAccess ? 'none' : 'flex';
   // Render upskilling suggestions if department selected
   renderUpskillingBanner();
@@ -3783,17 +3722,13 @@ function toggleMode(mode) {
   renderReviews();
 }
 
-function handleUpvote(id) {
-  const voted = getVoted();
-  const reviews = getReviews();
-  const r = reviews.find(x=>x.id===id);
-  if (!r) return;
-  const idx = voted.indexOf(id);
-  if (idx !== -1) { voted.splice(idx,1); r.upvotes = Math.max(0,(r.upvotes||0)-1); }
-  else { voted.push(id); r.upvotes = (r.upvotes||0)+1; }
-  localStorage.setItem('t3i_voted', JSON.stringify(voted));
-  saveReviews(reviews);
-  renderReviews();
+async function handleUpvote(id) {
+  const voted=getVoted(); if(voted.includes(id)) return;
+  try {
+    await sbRequest('/rest/v1/rpc/t3i_vote',{review_id:id});
+    voted.push(id); localStorage.setItem('t3i_voted',JSON.stringify(voted));
+    await dbRead(true); renderReviews();
+  } catch(e) { alert(e.message); }
 }
 
 // ==================== COLLEGES ====================
@@ -3973,6 +3908,7 @@ function renderChatMessages(msgs, myEmail) {
 }
 
 async function openChatModal(seniorId, seniorAlias, seniorCollege) {
+  alert('Private chat is not available yet. No payment is needed.'); return;
   _activeChatSeniorId = seniorId;
   _pendingFeedbackSeniorAlias = seniorAlias;
   const myEmail = getFresherEmail() || getSeniorEmail() || '';
@@ -4142,7 +4078,7 @@ function hoverSr(v) {
   }
 }
 function setSrRating(v) { srRating=v; hoverSr(0); }
-function submitReview() {
+async function submitReview() {
   const college = document.getElementById('sr-college').value;
   const text = document.getElementById('sr-text').value;
   const errEl = document.getElementById('sr-err');
@@ -4153,7 +4089,7 @@ function submitReview() {
   pending.push({id:'pr'+Date.now(),college_name:college,state:document.getElementById('sr-state').value,department:document.getElementById('sr-dept').value,year_of_study:document.getElementById('sr-year').value,review_text:text,rating:srRating,upvotes:0,verified:false,created_at:new Date().toISOString(),submitted_by:getFresherEmail()||getSeniorEmail()||''});
   const submitterEmail = getFresherEmail()||getSeniorEmail()||'';
   if(submitterEmail && typeof addReferralPoints === 'function') addReferralPoints(submitterEmail, 10);
-  savePendingReviews(pending);
+  try { await savePendingReviews(pending); } catch(e) { errEl.textContent=e.message; errEl.style.display='block'; return; }
   document.getElementById('sr-form-wrap').style.display='none';
   document.getElementById('sr-success').style.display='block';
 }
@@ -4176,6 +4112,7 @@ function initTheme() {
 }
 // ==================== UPI MODAL ====================
 function openUpiModal(type, seniorId) {
+  alert('Payments are paused while secure member access is being set up. Reviews are free to browse.'); return;
   upiType = type;
   const amount = type==='senior_chat'?49:19;
   const email = getFresherEmail()||getSeniorEmail()||'';
@@ -4344,28 +4281,20 @@ async function submitFresherFeedback(seniorId, seniorAlias) {
   setTimeout(() => { document.getElementById('upi-modal').style.display = 'none'; }, 2200);
 }
 function copyUpi() { navigator.clipboard.writeText('tier3insider@upi').then(()=>alert('UPI ID copied!')); }
-function submitUpi() {
+async function submitUpi() {
   const txn=document.getElementById('upi-txn').value;
   const email=document.getElementById('upi-email').value;
   if(!txn||!email){document.getElementById('upi-err').textContent='Please fill in both fields';document.getElementById('upi-err').style.display='block';return;}
   const payments=getPendingPayments();
   payments.push({id:'pay'+Date.now(),email,txn_id:txn,amount:upiType==='senior_chat'?49:19,type:upiType,date:new Date().toISOString()});
-  savePendingPayments(payments);
+  try { await savePendingPayments(payments); } catch(e) { alert(e.message); return; }
   document.getElementById('upi-modal-content').innerHTML=`<div class="success-box"><div class="success-icon">✅</div><h3 style="font-family:'Syne',sans-serif;font-weight:700;">Payment Submitted Successfully!</h3><p style="color:var(--muted);font-size:0.82rem;margin-top:6px;">Admin will verify and grant access within 2-4 hours.</p></div>`;
   setTimeout(closeUpiModal,2500);
 }
 
 // ==================== ADMIN ====================
-function adminLogin() {
-  const pw=document.getElementById('admin-pw').value;
-  const _h = (s) => s.split('').reduce((a,c)=>((a<<5)-a)+c.charCodeAt(0)|0,0);
-  if(_h(pw)===-908736573){localStorage.setItem('t3i_admin','true');showPage('admin');}
-  else{document.getElementById('admin-err').textContent='Incorrect password. Please try again.';document.getElementById('admin-err').style.display='block';}
-}
-function adminLogout(){localStorage.removeItem('t3i_admin');showPage('landing');}
-
 function renderAdmin(){
-  if(localStorage.getItem('t3i_admin')!=='true'){showPage('admin-login');return;}
+  if(!_isAdmin){showPage('admin-login');return;}
   const r=getReviews(),s=getSeniors(),pr=getPendingReviews(),ps=getPendingSeniors(),pp=getPendingPayments();
   document.getElementById('admin-stats').innerHTML=`
     <div class="admin-stat"><div class="val">${r.length}</div><div class="lbl">Live Reviews</div></div>
@@ -4425,7 +4354,7 @@ function renderAdminTab(){
           </div>
           <p style="font-size:0.82rem;color:#bbb;">${esc(s.bio)}</p>
           <p style="font-size:0.72rem;color:var(--muted);margin-top:6px;">📧 ${esc(s.email||'-')} • 💬 ${esc(s.whatsapp||'-')}</p>
-          <p style="font-size:0.72rem;color:var(--muted);">💰 UPI: <span style="color:var(--text);font-family:monospace;">${esc(s.upi_id||'Not provided')}</span> • 🪪 ID: ${s.id_card_url?`<a href="${/^https?:\/\//i.test(s.id_card_url)?esc(s.id_card_url):'#'}" target="_blank" style="color:#22c55e;">✔ View ID Card</a>`:(s.has_id_upload?'<span style="color:#f5b800;">Uploaded (no URL)</span>':'<span style="color:#ef4444;">✗ Not uploaded</span>')}</p>
+          <p style="font-size:0.72rem;color:var(--muted);">💰 UPI: <span style="color:var(--text);font-family:monospace;">${esc(s.upi_id||'Not provided')}</span> • 🪪 ID: ${s.id_card_url?`<button class="btn-ghost" data-path="${esc(s.id_card_url)}" onclick="viewPrivateFile(this.dataset.path)">View private ID</button>`:(s.has_id_upload?'<span style="color:#f5b800;">Uploaded (no URL)</span>':'<span style="color:#ef4444;">✗ Not uploaded</span>')}</p>
         </div>
         <div style="display:flex;gap:8px;">
           <button class="approve-btn" onclick="approveSenior('${esc(s.id)}')">✔ Approve</button>
