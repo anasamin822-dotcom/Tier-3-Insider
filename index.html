@@ -609,16 +609,16 @@ Type a college name or ask any question!</div>
         <div style="text-align:center;margin-bottom:1.75rem;">
           <div style="font-size:2.5rem;margin-bottom:12px;">🎒</div>
           <h2 style="font-size:1.6rem;letter-spacing:0.1em;">FRESHER LOGIN</h2>
-          <p style="color:var(--muted);font-size:0.82rem;margin-top:4px;">Verify your email to access honest reviews</p>
+          <p style="color:var(--muted);font-size:0.82rem;margin-top:4px;">We email you a 6-digit login code — no password needed</p>
         </div>
         <div id="fl-email-step" class="form-space">
           <div><label>Email Address</label><div class="input-wrap"><span>✉</span><input type="email" id="fl-email" placeholder="your@email.com" onkeydown="if(event.key===&#39;Enter&#39;)flSendOtp()"></div></div>
           <div id="fl-err" style="color:#f87171;font-size:0.78rem;display:none;"></div>
-          <button class="btn-primary w-full" onclick="flSendOtp()" id="fl-send-btn">Continue in demo →</button>
+          <button class="btn-primary w-full" onclick="flSendOtp()" id="fl-send-btn">Send login code →</button>
         </div>
         <div id="fl-otp-step" class="form-space" style="display: none; flex-direction: column;">
           <div class="otp-display">
-            <div style="font-size:0.72rem;color:var(--orange2);font-weight:600;margin-bottom:4px;">OTP Sent! Check your email</div>
+            <div style="font-size:0.72rem;color:var(--orange2);font-weight:600;margin-bottom:4px;">Login code sent — check your email</div>
             <div style="font-size:0.82rem;color:var(--muted);margin-top:4px;" id="fl-otp-sent-to"></div>
           </div>
           <div id="fl-otp-hint" style="display:none;background:rgba(255,77,46,0.1);border:1px solid rgba(255,77,46,0.3);border-radius:10px;padding:10px 14px;font-size:0.78rem;color:var(--orange2);font-family:monospace;margin-bottom:10px;text-align:center;"></div>
@@ -917,14 +917,14 @@ Type a college name or ask any question!</div>
   </div>
     </div>
     <!-- Paywall -->
-    <div class="paywall" id="r-paywall" style="display: flex;">
+    <div class="paywall" id="r-paywall" style="display: none;">
       <div>
-        <div style="font-family:&#39;Syne&#39;,sans-serif;font-weight:700;font-size:1rem;">🔒 Full Reviews Unlock Karein</div>
-        <p style="color:var(--muted);font-size:0.82rem;margin-top:4px;">Verify your email → get instant free access. ₹19 only for premium.</p>
+        <div style="font-family:&#39;Syne&#39;,sans-serif;font-weight:700;font-size:1rem;">Reviews are free to browse</div>
+        <p style="color:var(--muted);font-size:0.82rem;margin-top:4px;">Email sign-in is only needed for member features. Payments are paused.</p>
       </div>
       <div style="display:flex;gap:8px;flex-wrap:wrap;">
         <button class="btn-primary" onclick="showPage(&#39;fresher-login&#39;)">Free Access →</button>
-        <button class="btn-ghost" style="font-size:0.78rem;" onclick="openUpiModal(&#39;review_access&#39;)">₹19 Pay</button>
+        <button class="btn-ghost" style="font-size:0.78rem;" onclick="openUpiModal(&#39;review_access&#39;)">Payments paused</button>
       </div>
     </div>
     <!-- Upskilling Banner -->
@@ -1017,7 +1017,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">NIET is genuinely good for placements if you study seriously on your own. Campus placement percentage was 65% — mostly service companies like TCS NQT, Wipro, Infosys. Infrastructure is solid, 4-sharing hostels are decent. Total fees around 12 LPA for 4 years. Better than average tier-3 college in NCR.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1041,7 +1041,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">CSE batch at NIET had 70% placement in 2024. Top students got packages up to 6 LPA from companies like Jio, Deloitte, and Accenture. Faculty is responsive and supportive. The coding club here is active — they hold regular contests. Attendance rule is strict at 75% but not unfair. Hostel food needs improvement.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1065,7 +1065,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">ECE at KIET: realistic numbers are 30% campus placement. The rest have to job hunt independently. Faculty is average — some are good but many are just reading from slides. Fees are reasonable. Core ECE placements are weak but IT companies do visit for ECE students willing to code.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1089,7 +1089,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">KIET CSE had about 55% placement in 2024. Average package 3.5 LPA. Google, Amazon type companies do not visit — mostly service sector. But if you are self-motivated and do DSA practice, you can get product companies yourself. Campus is clean and infrastructure is okay. Hostel is 3-sharing.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1113,7 +1113,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">Invertis has low fees but the placement cell is practically inactive. You will need to find internships and jobs entirely on your own. Last year only 40% got placed with an average package of just 2.5 LPA. Infrastructure is okay, hostel is 3-4 sharing. Good as a last resort option, not as a primary choice.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1137,7 +1137,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">Mechanical at Invertis is honestly a tough situation. Placement for ME branch is below 20%. The campus is calm and not toxic which is a plus. Faculty tries but the industry connect is not there. Good for someone who wants to focus on GATE preparation without distractions.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1161,7 +1161,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">Government college with very low fees but faculty almost never shows up for classes. Mechanical placements are poor — only local companies offering 2 to 3 LPA. Better to self-study and focus on GATE. Infrastructure is basic but functional. Low toxicity environment compared to private colleges.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1185,7 +1185,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">CSE at Motihari CE: placement rate is around 30% with average 2.5 LPA from local Bihar companies. Being a government college, the fees are very low which makes the ROI somewhat okay. Self-motivated students do okay by preparing on their own. Faculty attendance itself is a problem here.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1209,7 +1209,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">TMU management is very money-minded. Fees increase every year without proportional improvement. Placement was 50% last year with average package 3 LPA. Infrastructure is decent and campus is clean. Teaching quality is average. Campus life is okay but could be better.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1233,7 +1233,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">MBA at TMU is reasonable for a tier-3 option. Placement 45% with average 3.5 LPA for MBA grads. Faculty includes some industry professionals as guest lecturers. Hostel is good quality. However the fees-to-outcome ratio is not great — you are paying premium for a non-premium outcome.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1257,7 +1257,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">Amity brand name genuinely helps during campus placements. Only the top 20% get good packages of 7-8 LPA from companies like IBM and Deloitte. Rest get 3-4 LPA from service companies. Infrastructure is excellent, labs are top-notch. Fees are very expensive at 20 LPA for 4 years. Competitive batch.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1281,7 +1281,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">Amity IT has decent placements — 65% placed with average 4 LPA. The brand recognition is real but you pay a very high price for it. Faculty is generally qualified and industry experienced. Research culture exists unlike most tier-3 colleges. If your family can afford it, Amity is worth it for the NCR location.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1305,7 +1305,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">GL Bajaj is good for self-learners. If you study seriously and practice DSA, placements are achievable. 55% placement last year with average 3.2 LPA. Faculty is helpful if you approach them but very hands-off otherwise. Infrastructure is decent for the fees charged. Hostel is okay.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1329,7 +1329,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">CSE at GL Bajaj: placement is around 60% with average 3.5 LPA. TCS, Wipro, HCL, Accenture are the main recruiters. If you are self-motivated and do online certifications, you can crack better companies. Low toxicity — seniors help juniors here which is rare. Good canteen and sports facilities.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1353,7 +1353,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">Average college overall. Fees are reasonable around 10 LPA total. Hostel is manageable. Faculty is hit or miss across departments. Placement rate is 45% with average 2.8 LPA. Local reputation in Lucknow helps somewhat. Not a bad option for Uttar Pradesh students looking for a budget engineering college.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1377,7 +1377,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">CSE placement at IU Lucknow was about 50% in 2024 with 3 LPA average. Faculty in CSE is better than ECE — some professors have industry experience. Campus is calm and not too stressful. Being Lucknow based, local companies do visit which helps. Not a great college but not terrible either.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1401,7 +1401,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">SRMS is locally well-known in Bareilly but mostly local companies visit for placement. Average package 2.8 LPA with placement rate of 35%. Faculty is okay but academic rigor is low. Good hostel life and cheap fees. Best used as a backup option — not a first choice for CSE.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1425,7 +1425,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">Mechanical at SRMS is a struggle for placements. Only 15% got placed from ME branch. The workshop facilities are decent but faculty engagement is low. Best route from SRMS ME is GATE preparation or switching to IT through certifications. Low fees is the only real advantage here.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1449,7 +1449,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">Government college in Gaya with decent infrastructure. Civil engineering placements are weak — mostly local consulting firms offering 2-2.5 LPA. Value for money is actually decent because government college fees are very low. Good option if you want an engineering degree on a very tight budget.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1473,7 +1473,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">GCE Gaya CSE: placement rate around 35% with average 2.8 LPA from local Bihar IT companies. Being a government college the fees are extremely low which makes the ROI somewhat acceptable. Campus environment is peaceful. Students who self-prepare and do online courses do manage to get decent jobs.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1497,7 +1497,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">BIT Mesra is genuinely the best college in Eastern India at tier-2 level. Placements are strong — 75% placed with average 5 LPA. Strong alumni network that actively helps students. Faculty is actually good and experienced. Fees around 15 LPA total. Competitive batch pushes you to study. Worth every rupee.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1521,7 +1521,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">IT at BIT Mesra is excellent. Companies like Wipro, TCS, Infosys, and even some product companies visit. Average package 4.5 LPA for IT. Infrastructure is top-notch. Hostel life is fun and the campus culture promotes learning. One of the best ROI engineering colleges in Eastern India. Strongly recommend.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1545,7 +1545,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">LNCT is RGPV affiliated with a massive batch size of 1200 plus students. You will feel lost in the crowd. Placement rate is 40% mostly at 2-3 LPA. Academic quality is mediocre. Good only if you have a GATE or competitive exam focus. Management is average and not very student-friendly.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1569,7 +1569,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">CSE at LNCT Bhopal: placement is around 45% with average 3 LPA. Infosys, Wipro, TCS NQT are the main recruiters. Self-study is essential here. Faculty is a mixed bag. Good canteen and sports facilities. Campus is large. If you are disciplined and self-driven, LNCT is a workable option for Bhopal.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1593,7 +1593,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">JECRC is arguably the best tier-3 college in Rajasthan. Infrastructure is excellent, campus is beautiful. Placements are decent — 60% placed with average 4.5 LPA. Faculty teaching quality is good compared to other tier-3 colleges. Fees around 12 LPA. Strong coding culture. Hostel is excellent.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1617,7 +1617,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">IT batch at JECRC had 58% placement with 4 LPA average in 2024. Amazon, Jio, TCS Digital visited campus. Good infrastructure and active placement cell. They actually train you for aptitude and coding from 2nd year. Hostel is clean and comfortable. Recommended as the go-to college in Jaipur tier-3 segment.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1641,7 +1641,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">VIT is the gold standard for what good placements look like. 85% placement with average package of 8 LPA. Great infrastructure, good faculty, strong placement cell. But fees are very expensive at 25 LPA for 4 years. Campus is massive — feels like a city. South India placement ecosystem is much stronger.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1665,7 +1665,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">IT at VIT Vellore: top-tier placements. Microsoft, Amazon, Google, Deloitte all visit. Average package for IT is 7 LPA with top packages going above 40 LPA for top performers. Faculty is research-oriented. CGPA matters a lot for placement eligibility. Expensive but genuinely worth it if you can afford it.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1689,7 +1689,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">Sharda has good international student diversity which creates a different campus culture. Fees are very high for MBA — 20 LPA plus hostel separately. ROI is questionable unless you are from a wealthy family. Placement is okay but not proportional to the fees paid. Good for networking if you utilize it well.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1713,7 +1713,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">CSE at Sharda: 55% placement rate with average 3.5 LPA. The international exposure is the biggest plus. Campus is good with modern facilities. Faculty is generally qualified. Fees are on the higher side. Good for students who want to experience a diverse campus environment. Not the best ROI for technical placements.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1737,7 +1737,7 @@ Type a college name or ask any question!</div>
       <div style="background:rgba(245,184,0,0.08);border:1px solid rgba(245,184,0,0.2);border-radius:8px;padding:6px 10px;font-size:0.72rem;color:#f5b800;margin-bottom:8px;">⚠️ No specific points in this review. Please write concrete, detailed feedback.</div>
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">Mechanical engineering reality check at NIET Noida — only 15% got placed through campus last year, mostly at local manufacturing firms. You absolutely need to either change branch orientation toward IT or prepare for GATE/MBA. Mechanical demand in the job market is extremely low right now. Think carefully before joining.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1761,7 +1761,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">CSE at NIE Noida had 45% campus placement with average 3 LPA. Faculty is average — depends on which professor you get. Infrastructure is decent. Fees are reasonable. Not the best in Noida tier-3 category but manageable if you self-prepare. Attendance rules are strict which can be frustrating.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1785,7 +1785,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">ABES is one of the better tier-3 options in Ghaziabad. Active coding culture, good placements 70% with average 4 LPA. Faculty is responsive and actually helpful. Infrastructure is decent. Good hostel. Fees are reasonable for what you get. Recommended for serious students who want to study with a good peer group.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1809,7 +1809,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">IT at ABES Ghaziabad is solid. 68% placement with average 3.8 LPA. Companies like Wipro, HCL, Capgemini, and occasionally Jio visit. Coding clubs are active and competitive programming culture is good. Senior-junior interaction is healthy. One of the better investments for tier-3 in NCR-Ghaziabad area.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1833,7 +1833,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">IMS is a solid mid-range college. Honest placement rate around 50%. Average package 3.2 LPA. Faculty is average, infrastructure is okay. Fees around 11 LPA. Better than the worst tier-3 colleges but not the best. A solid middle-ground option if your UPSEE rank puts you here.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1857,7 +1857,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">KIT Kanpur is a local UPSEE college with mostly local company placements. Only 25% placement rate with average 2.5 LPA. Faculty puts in minimal effort. Best used as a last resort safety backup option. Fees are cheap which is the only real advantage. Self-preparation is the only way forward here.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1881,7 +1881,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">CSE at KIT Kanpur has slightly better placement than ECE at around 30-35%. Average package still low at 2.5-3 LPA from local Kanpur companies. Faculty is disengaged. Infrastructure is basic but functional. If you end up here, focus entirely on self-learning through online platforms. College wont help you much.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1905,7 +1905,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">JSS is a genuinely good Bangalore college. Strong placement cell achieved 72% placed in 2024 with average 5.5 LPA. Faculty is knowledgeable with decent industry connections. Hostel is okay. Fees 14 LPA total. Bangalore location is a massive advantage for placements — companies prefer Bangalore colleges.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1929,7 +1929,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">IT at JSS Bangalore: placement was 68% with 5 LPA average. Tech Mahindra, Mphasis, and some product startups visited campus. Bangalore startup ecosystem connection is the real value here. Faculty is experienced. Coding competitions are regularly organized. Hostel is comfortable. Highly recommended for Karnataka students.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1953,7 +1953,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">Chandigarh University is extremely marketing-heavy. Placement numbers they advertise are inflated — actual packages for majority are below 5 LPA. Good campus infrastructure is real though. Strong coding culture exists if you find the right peer circles. Fees are expensive. Do your research carefully before joining.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -1977,7 +1977,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">IT at CU: placement is around 60% but beware of the median vs mean package trap. Median package is closer to 4 LPA not the 6-7 LPA they advertise. Good hostel facilities. Campus is large and well-maintained. Faculty is average. Worth it mainly because of brand recognition in Punjab and North India.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -2001,7 +2001,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">LPU has a massive campus but placement reality is very different from the brochure. Top 10% of students get good packages of 6 LPA plus. The rest get average packages. International exposure is decent. Facilities are world-class. But very strict attendance — 75% minimum or you get detained. Choose wisely.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -2025,7 +2025,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">CSE at LPU has 65% placement rate with average 4 LPA. Amazon, Wipro, TCS, Infosys all visit. The VITEEE-like entrance gives you scholarship which can make it affordable. Campus life is vibrant. Sports facilities are world-class. Academic pressure is moderate. Good option if you get scholarship seat.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -2049,7 +2049,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">KIIT is the best engineering college in Odisha by far. Placement rate 78% with average 7 LPA. Good MNC companies visit campus including TCS, Wipro, HCL, Cognizant. Faculty is mixed — some are great and some are average. Fees are 18 LPA total which is on the higher side for the location.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -2073,7 +2073,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">IT at KIIT has excellent placements. 75% placed with average 6.5 LPA. Campus infrastructure is very good. Hostel life is active and fun. Faculty generally knowledgeable. Strong alumni network across India. If you are from Eastern India and can afford the fees, KIIT is the best choice available.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -2097,7 +2097,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">SRM is good for placements if you are in the top batch division. Average package is 5-6 LPA. Campus is massive with 20K plus students which can feel overwhelming. Faculty is research-oriented. South India placement ecosystem is stronger than North India. Expensive at 18 LPA but generally worth it.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -2121,7 +2121,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">IT at SRM Kattankulathur: 72% placement with average 5.5 LPA. Good companies like TCS Digital, Wipro Elite, Infosys Power Programmer visit. If you crack these high-package versions you are set. Self-prep is essential. Hostel is decent. The sheer size of campus means resources are abundant.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -2145,7 +2145,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">Tulas is one of the better private colleges in Dehradun. CSE placement rate around 55% with average 3 LPA. Faculty is mixed but some professors are genuinely good. Infrastructure is decent for the fees. Dehradun location is pleasant. Hostel food quality is average. Good option for Uttarakhand students.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -2169,7 +2169,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">Quantum University Roorkee has decent infrastructure and a growing placement record. CSE placement around 50% with average 2.8 LPA. Faculty is responsive. Roorkee location is good — near IIT Roorkee which creates a positive academic environment. Fees are moderate. Attendance rules are strict but fair.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -2193,7 +2193,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">IT at Quantum University: 48% placement rate with average 2.7 LPA. Companies from Dehradun and Noida visit. Faculty is young and enthusiastic. Good lab infrastructure. The university is growing fast and actively improving placements. Hostel is comfortable. Reasonable fees make it a workable option in Uttarakhand.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -2217,7 +2217,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">DIT University is a decent private college in Dehradun. Placement at 50% with average 3.2 LPA. Faculty quality is decent — some experienced professors. Campus is clean and well-maintained. Fees are around 10 LPA. Good option if you want to study in Dehradun hills. Hostel life is pleasant.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -2241,7 +2241,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">Amrapali Institute in Haldwani serves the Kumaon region well. Placement rate around 40% with average 2.5 LPA mostly from local Uttarakhand companies. Faculty is average. Fees are moderate. Good for students from Kumaon region who want to stay close to home. Not a top choice but acceptable.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -2265,7 +2265,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">DBUU Dehradun has good campus infrastructure and growing placements. CSE placement around 52% with 2.8 LPA average. Faculty is young and updated with modern tech. Startup ecosystem connect is growing. Fees are reasonable. Good for students who want a modern university experience in Uttarakhand.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -2289,7 +2289,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">AIT Bangalore is a solid mid-tier Bangalore college. Placement 65% with average 4.5 LPA. Being in Bangalore means good company footfall. Faculty is experienced. Infrastructure is good. Fees around 12 LPA. Strong alumni network in Bangalore IT sector. One of the better options in Bangalore tier-3 segment.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -2313,7 +2313,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">SJB is a reputable Bangalore college. Placement rate 62% with average 4 LPA. Faculty is knowledgeable and many have industry experience. Good lab facilities. Bangalore location really helps — startups and MNCs both visit. Reasonable fees for a Bangalore college. Good choice for Karnataka CSE students.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -2337,7 +2337,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">Cambridge IT Bangalore has decent placement — 60% with average 3.8 LPA. Faculty is average but the Bangalore location compensates. Good infrastructure. Hostel is okay. If you use Bangalore location well for internships and networking, you can get good jobs regardless of the college. Reasonable fees.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -2361,7 +2361,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">KLEIT Hubballi is the premier engineering college in North Karnataka. Placement 65% with average 4 LPA. Faculty is experienced and dedicated. Campus infrastructure is excellent. Strong alumni network in Hubballi-Dharwad industrial belt. Fees are reasonable for the quality. Recommended for North Karnataka students.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -2385,7 +2385,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">SDM Dharwad is a well-reputed college in North Karnataka. Placement 60% with average 3.8 LPA. Faculty is good — experienced professors with industry connections. Campus is clean and well-maintained. Low toxicity environment. Fees are moderate. Good option if you score well in KCET and end up in Dharwad region.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -2409,7 +2409,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">JSPM Pune is a solid tier-3 Pune college. Placement 58% with average 3.5 LPA. Pune IT ecosystem is great and many companies visit from Hinjewadi and Magarpatta IT parks. Faculty is decent. Fees around 11 LPA. Good hostel. Pune location is the biggest plus — better than similar colleges in other states.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -2433,7 +2433,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">Sinhgad colleges have decent placement cell in Pune. 60% placement with average 3.8 LPA. Companies from Pune IT park regularly visit. Faculty is average but lab facilities are good. Pune ecosystem helps a lot. Fees moderate. Not the best Pune college but not the worst either. Decent overall.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -2457,7 +2457,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">Terna Engineering in Navi Mumbai has good placement — 65% with average 4 LPA. Mumbai and Navi Mumbai companies visit. Faculty is experienced. Good infrastructure. Fees are around 12 LPA. Navi Mumbai location is very convenient for placements — Mindspace and TTC industrial area companies visit regularly.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -2481,7 +2481,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">Atharva in Mumbai has decent placement — 55% with average 3.5 LPA. Mumbai location is the biggest advantage. Faculty is mixed. Infrastructure okay for Mumbai. Fees are higher than Pune colleges due to Mumbai real estate. Overall reasonable if you are from Mumbai and want to stay local for college.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -2505,7 +2505,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">ECE at CU has very low placement rate for core sector — about 20%. Most ECE students end up in IT sector. College trains them for IT placements which helps. Overall placement 55% but mostly IT sector. Infrastructure is genuinely world-class. Coding culture is strong. A decent option if you can afford the fees.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -2529,7 +2529,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">ECE at JECRC Jaipur has decent placements for ECE — about 45% with average 3.5 LPA. Better than most tier-3 ECE departments. Good labs. Faculty with industry experience. The coding culture pushes ECE students toward IT placements too. Jaipur IT ecosystem is growing steadily. Good option in Rajasthan.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -2553,7 +2553,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">ECE at BIT Mesra has strong placements for core ECE sector — 55% with average 4 LPA. Samsung, Qualcomm, and TCS Electronics visit campus. Faculty is experienced with research background. Labs are well-equipped. Strong alumni network in electronics sector. Good option for core ECE career in Eastern India.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -2577,7 +2577,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">ECE at KIIT has decent placements — 60% with average 4.5 LPA. Both core and IT companies visit. Good lab infrastructure. Faculty is qualified. The university has a strong brand in Eastern India which helps in placements. Bhubaneswar IT ecosystem is small but growing. Worth the fees.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -2601,7 +2601,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">ECE at VIT Vellore has excellent placements — 80% with average 6 LPA. Both core and IT companies visit. Qualcomm, Samsung, Intel all recruit from VIT ECE. Faculty has strong research output. Great labs. South India placement ecosystem is mature. Expensive but clearly worth it.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -2625,7 +2625,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">SRM ECE has solid placement — 65% with average 4.5 LPA. Good mix of core and IT placements. Samsung, TCS Electronics, and Qualcomm have recruited here. Faculty is research-oriented. Good lab facilities. Large campus has abundant resources. Not cheap but good value in the Tamil Nadu engineering ecosystem.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -2649,7 +2649,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">GD Rungta is the best private college in Chhattisgarh. Placement 55% with average 3 LPA from Raipur and Bhilai IT companies. Faculty is above average for the state. Good infrastructure. Bhilai Steel Plant ecosystem creates some core engineering opportunities. Best private option in CG.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -2673,7 +2673,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">RGC Raipur is a private college with moderate placement — around 40% with 2.5 LPA average. Faculty is decent for Raipur standard. Infrastructure is okay. Fees are very reasonable. For students in Chhattisgarh who cannot go out of state, this is an acceptable option. Self-study is necessary here.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -2697,7 +2697,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">RIT Roorkee has placement around 45% with average 2.6 LPA. Being close to IIT Roorkee creates a good academic atmosphere but the college itself is average. Faculty is decent. Infrastructure is moderate. Fees are reasonable. Good for Uttarakhand students. Self-preparation is key to getting better than average packages.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -2721,7 +2721,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">Shivalik College Dehradun has around 42% placement rate with 2.4 LPA average. Faculty is average. Infrastructure is decent. Fees are low which makes it affordable for Uttarakhand students. Campus life is peaceful. Good for students who want budget engineering with self-study focus. Dehradun is a pleasant city.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -2745,7 +2745,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">BFIT Dehradun is a growing college with around 40% placement rate and 2.3 LPA average. Faculty is young and enthusiastic. Infrastructure is improving. Fees are very reasonable. Placement is growing year by year as the college matures. Good option for budget-conscious Uttarakhand students. Dehradun location helps.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -2769,7 +2769,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">2021 placement was decent at Galgotias — around 35% placed with 3.2 LPA average. TCS and Infosys were the main recruiters. Faculty engagement was low. Infrastructure was average. DSA self-prep was the only reliable way to get placed. Things may have changed since then.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -2793,7 +2793,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">2020 batch at NIET — placement was around 28% during COVID year. Companies stopped visiting due to pandemic. Average package was 3 LPA from online drives. Hostel was shut. Online semester exams were very lenient. Not a representative year — things improved after 2022.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -2817,7 +2817,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">KIET ECE placement in 2019 was about 40% for core and IT combined. Average package 3.5 LPA. Core ECE companies like Samsung and HCL Tech visited. Faculty research culture existed but not pushed hard. Labs were decent. KIET was better than most NCR tier-3 colleges in this period.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -2841,7 +2841,7 @@ Type a college name or ask any question!</div>
       
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;filter:blur(5px);opacity:0.4;user-select:none;">BIT Mesra 2018 batch had excellent placement for tier-3 standards — 72% placed with 5.5 LPA average. Wipro, TCS, and some product companies visited. Campus culture was serious about academics. Alumni network was already strong then. Still one of the top tier-3 options in Eastern India.</p>
-        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
+        <div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal(&#39;review_access&#39;)">Unlock</button></div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -2877,7 +2877,7 @@ Type a college name or ask any question!</div>
     <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:2rem;">
       <div>
         <h1 style="font-size:2rem;letter-spacing:0.05em;">SENIOR <span class="grad">MENTORS</span></h1>
-        <p style="color:var(--muted);font-size:0.82rem;margin-top:4px;">Real advice from real students who've been there</p>
+        <p style="color:var(--muted);font-size:0.82rem;margin-top:4px;">Sample profiles are shown until real seniors are approved</p>
       </div>
       <div style="display:flex;gap:8px;">
         <button class="btn-ghost" onclick="openSeniorInbox()">📬 My Inbox</button>
@@ -2894,7 +2894,7 @@ Type a college name or ask any question!</div>
       </div>
       <div id="hof-list" style="font-size:0.8rem;color:var(--muted);">No mentors yet. Become a senior to earn points!</div>
       <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(245,184,0,0.15);font-size:0.72rem;color:#888;">
-        Submit Review: +10 pts &nbsp;•&nbsp; Help a Junior: +25 pts &nbsp;•&nbsp; Verified Mentor: +50 pts &nbsp;•&nbsp; <span style="color:#f5b800;">100 pts = 1 Month Free Premium 🎁</span>
+        Submit Review: +10 pts &nbsp;•&nbsp; Help a Junior: +25 pts &nbsp;•&nbsp; Verified Mentor: +50 pts &nbsp;•&nbsp; <span style="color:#f5b800;">Points do not grant paid access 🎁</span>
       </div>
     </div>
     <div class="grid-3" id="seniors-grid"></div>
@@ -3235,6 +3235,58 @@ async function sbRequest(path, body, token) {
   if (!res.ok) throw new Error(data?.msg || data?.message || 'Request failed. Please try again.');
   return data;
 }
+// ==================== MEMBER AUTH (Supabase Auth email OTP) ====================
+let _memberSession = null;
+let _memberProfile = null;
+async function memberOtpSend(email) {
+  const res = await fetch(SUPABASE_URL + '/auth/v1/otp', {method:'POST', headers:{'Content-Type':'application/json', apikey:SUPABASE_ANON_KEY}, body:JSON.stringify({email, create_user:true})});
+  if (!res.ok) { const d = await res.json().catch(()=>null); throw new Error(d?.msg || d?.message || d?.error_description || 'Could not send the code. Please try again in a minute.'); }
+}
+async function memberVerify(email, code) {
+  let res = await fetch(SUPABASE_URL + '/auth/v1/verify', {method:'POST', headers:{'Content-Type':'application/json', apikey:SUPABASE_ANON_KEY}, body:JSON.stringify({email, token:code, type:'email'})});
+  if (!res.ok) {
+    res = await fetch(SUPABASE_URL + '/auth/v1/verify', {method:'POST', headers:{'Content-Type':'application/json', apikey:SUPABASE_ANON_KEY}, body:JSON.stringify({email, token:code, type:'signup'})});
+  }
+  const data = await res.json().catch(()=>null);
+  if (!res.ok || !data?.access_token) throw new Error('Incorrect or expired code. Please try again.');
+  _memberSession = data;
+  sessionStorage.setItem('t3i_member_session', JSON.stringify({access_token:data.access_token, refresh_token:data.refresh_token}));
+  await refreshMemberProfile();
+}
+async function refreshMemberProfile() {
+  _memberProfile = await sbRequest('/rest/v1/rpc/t3i_my_profile', {}, _memberSession?.access_token);
+}
+async function ensureMemberSession() {
+  if (!_memberSession?.access_token) throw new Error('Sign in first.');
+  const exp = JSON.parse(atob(_memberSession.access_token.split('.')[1].replace(/-/g,'+').replace(/_/g,'/'))).exp;
+  if (exp * 1000 < Date.now() + 60000) {
+    _memberSession = await sbRequest('/auth/v1/token?grant_type=refresh_token', {refresh_token:_memberSession.refresh_token});
+    sessionStorage.setItem('t3i_member_session', JSON.stringify(_memberSession));
+  }
+  return _memberSession;
+}
+async function restoreMember() {
+  // Supabase email links return tokens in the fragment. Consume and remove them before any UI work.
+  const params = new URLSearchParams(location.hash.slice(1));
+  if (params.has('access_token') && params.has('refresh_token')) {
+    sessionStorage.setItem('t3i_member_session', JSON.stringify({access_token:params.get('access_token'),refresh_token:params.get('refresh_token')}));
+    history.replaceState(null, '', location.pathname + location.search);
+  }
+
+  let saved; try { saved = JSON.parse(sessionStorage.getItem('t3i_member_session') || 'null'); } catch { sessionStorage.removeItem('t3i_member_session'); return; }
+  if (!saved?.refresh_token) return;
+  try {
+    _memberSession = await sbRequest('/auth/v1/token?grant_type=refresh_token', {refresh_token:saved.refresh_token});
+    sessionStorage.setItem('t3i_member_session', JSON.stringify({access_token:_memberSession.access_token, refresh_token:_memberSession.refresh_token}));
+    await refreshMemberProfile();
+    if (!_memberProfile) throw new Error('No profile');
+  } catch(e) { _memberSession = null; _memberProfile = null; sessionStorage.removeItem('t3i_member_session'); }
+}
+async function memberLogout() {
+  const token = _memberSession?.access_token;
+  _memberSession=null; _memberProfile=null; sessionStorage.removeItem('t3i_member_session');
+  try { if (token) await sbRequest('/auth/v1/logout', {}, token); } catch(e) { console.warn('Member logout request failed; local session cleared'); }
+}
 async function restoreAdmin() {
   localStorage.removeItem('t3i_admin');
   const saved = JSON.parse(sessionStorage.getItem('t3i_admin_session') || 'null');
@@ -3267,15 +3319,16 @@ const getPendingSeniors = () => _dbCache?.pending_seniors || [];
 const getPendingPayments = () => _dbCache?.pending_payments || [];
 const getPaidEmails = () => _dbCache?.paid_emails || [];
 const getVoted = () => JSON.parse(localStorage.getItem('t3i_voted')||'[]');
-const getFresherEmail = () => localStorage.getItem('t3i_fresher_email');
-const getSeniorEmail = () => localStorage.getItem('t3i_senior_email');
-// Review browsing is public. These local demo identities are never authentication.
-const hasPaidAccess = () => true;
-const hasSeniorChatAccess = () => false;
+// Identity comes only from a verified Supabase Auth session. localStorage is never trusted.
+const getFresherEmail = () => _memberProfile?.email || '';
+const getSeniorEmail = () => '';
+const hasPaidAccess = () => true; // Reviews are free to browse.
+const hasSeniorChatAccess = () => !!_memberProfile?.senior_chat;
 async function init() {
-  document.querySelectorAll('.page').forEach(page=>{const notice=document.createElement('p');notice.style.cssText='margin:0 auto 20px;padding:12px 16px;max-width:1152px;border:1px solid #555;border-radius:8px;color:var(--muted);font-size:13px;line-height:1.5';notice.textContent='Reviews are free to browse. Private chat and payments are paused. Member email forms are for the demo only.';(page.querySelector('.container') || page.firstElementChild || page).prepend(notice);});
+  document.querySelectorAll('.page').forEach(page=>{const notice=document.createElement('p');notice.style.cssText='margin:0 auto 20px;padding:12px 16px;max-width:1152px;border:1px solid #555;border-radius:8px;color:var(--muted);font-size:13px;line-height:1.5';notice.textContent='Reviews are free. Email-code sign-in is live. Private chat needs an approved, account-linked senior and admin-granted access. Payments are paused: do not send money.';(page.querySelector('.container') || page.firstElementChild || page).prepend(notice);});
   ['t3i_paid_emails','t3i_pending_reviews','t3i_pending_seniors','t3i_pending_payments','t3i_reviews','t3i_seniors'].forEach(k=>localStorage.removeItem(k));
   await restoreAdmin();
+  await restoreMember();
   try { await dbRead(true); }
   catch(e) {
     _dbCache=getDefaultDb();
@@ -3293,7 +3346,7 @@ async function saveQueue(queue,arr) {
   if (_isAdmin) { await dbWrite({...getDb(),[queue]:arr}); return; }
   const item=arr[arr.length-1];
   if (!item) throw new Error('Nothing to submit');
-  await sbRequest('/rest/v1/rpc/t3i_submit',{queue,payload:item});
+  await sbRequest('/rest/v1/rpc/t3i_submit',{queue,payload:item}, queue==='pending_seniors' ? (await ensureMemberSession()).access_token : undefined);
   _dbCache[queue]=[];
 }
 async function savePendingReviews(arr) { await saveQueue('pending_reviews',arr); }
@@ -3328,8 +3381,6 @@ let currentMode = 'normal';
 let srRating = 0;
 let currentAdminTab = 'reviews';
 let upiType = 'review_access';
-let flGeneratedOtp = '';
-let slGeneratedOtp = '';
 
 // ==================== NAVIGATION ====================
 function showPage(page) {
@@ -3362,6 +3413,11 @@ function goHome() {
   else showPage('landing');
 }
 function logout() {
+  closeUpiModal(); memberLogout();
+  document.getElementById('fl-email-step').style.display='flex';
+  document.getElementById('fl-otp-step').style.display='none';
+  document.getElementById('fl-success-step').style.display='none';
+  document.getElementById('fl-otp').value='';
   localStorage.removeItem('t3i_fresher_email');
   localStorage.removeItem('t3i_senior_email');
   showPage('landing');
@@ -3384,28 +3440,32 @@ const EMAILJS_PUBLIC_KEY = '4AcEmpZVl4ybih7w2';
 
 
 // ==================== FRESHER LOGIN ====================
-function flSendOtp() {
+async function flSendOtp() {
  const email=document.getElementById('fl-email').value.trim();
  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { showErr('fl-err','Enter a valid email');return; }
- localStorage.setItem('t3i_fresher_email',email);
- showOnboarding();
+ const btn=document.getElementById('fl-send-btn'); btn.disabled=true; btn.textContent='Sending code…';
+ try {
+   await memberOtpSend(email);
+   document.getElementById('fl-otp-sent-to').textContent='Code sent to '+email;
+   document.getElementById('fl-email-step').style.display='none';
+   document.getElementById('fl-otp-step').style.display='flex';
+ } catch(e) { showErr('fl-err', e.message); }
+ btn.disabled=false; btn.textContent='Send login code →';
 }
 function flEmailStep() {
   document.getElementById('fl-email-step').style.display='flex';
   document.getElementById('fl-otp-step').style.display='none';
 }
-function flVerifyOtp() {
+async function flVerifyOtp() {
   const otp = document.getElementById('fl-otp').value.trim();
-  if (otp.length !== 6) { showErr('fl-err2','Please enter the 6-digit OTP'); return; }
-  if (otp !== atob(flGeneratedOtp)) { showErr('fl-err2','Incorrect OTP. Please check and try again.'); return; }
   const email = document.getElementById('fl-email').value.trim();
-  localStorage.setItem('t3i_fresher_email', email);
-  document.getElementById('fl-otp-step').style.display='none';
-  document.getElementById('fl-success-step').style.display='block';
-  // Grant full access on verified login
-  const paidEmails = getPaidEmails();
-  if (!paidEmails.includes(email)) { paidEmails.push(email); savePaidEmails(paidEmails); }
-  setTimeout(() => showOnboarding(), 1200);
+  if (!/^\d{6}$/.test(otp)) { showErr('fl-err2','Please enter the 6-digit code from your email'); return; }
+  try {
+    await memberVerify(email, otp);
+    document.getElementById('fl-otp-step').style.display='none';
+    document.getElementById('fl-success-step').style.display='block';
+    setTimeout(() => showOnboarding(), 900);
+  } catch(e) { showErr('fl-err2', e.message); }
 }
 
 function showOnboarding() {
@@ -3440,7 +3500,7 @@ function finishOnboarding() {
   }
 }
 
-// ==================== SENIOR REGISTRATION (MULTI-STEP, NO LOGIN) ====================
+// ==================== SENIOR REGISTRATION (verified member, admin approval) ====================
 let srData = {};
 function srGoStep(n) {
   [1,2,3].forEach(i => {
@@ -3579,6 +3639,11 @@ async function srFinalSubmit() {
   srData = {};
 }
 function initSeniorReg() {
+  if (!_memberProfile) {
+    loginRequiredModal('Sign in with your email first — your senior profile is linked to your verified email so only you can answer its chats.');
+    showPage('seniors');
+    return;
+  }
   // Reset entire flow to step 1
   srData = {};
   [1,2,3].forEach(i => {
@@ -3676,7 +3741,7 @@ function renderReviews() {
       <div style="display:flex;align-items:start;justify-content:space-between;gap:10px;margin-bottom:10px;">
         <div>
           <button onclick="openScorecard('${esc(String(r.college_name).replace(/\\/g,'\\\\').replace(/'/g,"\\'"))}') " style="background:none;border:none;color:var(--text);font-family:'Syne',sans-serif;font-weight:700;font-size:0.95rem;cursor:pointer;text-align:left;line-height:1.3;padding:0;" onmouseover="this.style.color='var(--orange)'" onmouseout="this.style.color='var(--text)'">${esc(r.college_name)}</button>
-          <p style="color:var(--muted);font-size:0.72rem;margin-top:3px;">${r.state} • ${r.department} • ${r.year_of_study}</p>
+          <p style="color:var(--muted);font-size:0.72rem;margin-top:3px;">${esc(r.state)} • ${esc(r.department)} • ${esc(r.year_of_study)}</p>
           <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:5px;">
             <span style="font-size:0.68rem;font-weight:600;color:${decayColor};">${decayLabel}</span>
             ${r.verified?'<span style="font-size:0.68rem;color:#22c55e;font-weight:600;">✔ Verified</span>':''}
@@ -3687,7 +3752,7 @@ function renderReviews() {
       ${balanceWarn?`<div style="background:rgba(245,184,0,0.08);border:1px solid rgba(245,184,0,0.2);border-radius:8px;padding:6px 10px;font-size:0.72rem;color:#f5b800;margin-bottom:8px;">${balanceWarn}</div>`:''}
       <div style="position:relative;">
         <p style="font-size:0.83rem;color:#ccc;line-height:1.6;margin-bottom:12px;${isLocked?'filter:blur(5px);opacity:0.4;':''}${isLocked?'user-select:none;':''}">${esc(r.review_text)}</p>
-        ${isLocked?`<div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Unlock for ₹19</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal('review_access')">Unlock</button></div>`:''}
+        ${isLocked?`<div class="locked-overlay"><span style="font-size:1.2rem;">🔒</span><p style="font-size:0.75rem;color:var(--orange);font-weight:600;">Reviews are free</p><button class="btn-primary" style="padding:5px 14px;font-size:0.72rem;margin-top:6px;" onclick="openUpiModal('review_access')">Unlock</button></div>`:''}
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:10px;">
@@ -3814,7 +3879,7 @@ function renderSeniors() {
   if (hofEl) {
     const hof = getHallOfFame();
     if (hof.length) {
-      hofEl.innerHTML = hof.map((e,i)=>'<div style="display:flex;justify-content:space-between;padding:4px 0;"><span>'+(i===0?'👑':'#'+(i+1))+' '+e[0]+'</span><span style="color:#f5b800;font-weight:700;">'+e[1]+' pts</span></div>').join('');
+      hofEl.innerHTML = hof.map((e,i)=>'<div style="display:flex;justify-content:space-between;padding:4px 0;"><span>'+(i===0?'👑':'#'+(i+1))+' '+esc(e[0])+'</span><span style="color:#f5b800;font-weight:700;">'+e[1]+' pts</span></div>').join('');
     }
   }
   const list = getSeniors();
@@ -3840,10 +3905,10 @@ function renderSeniors() {
     const stars = Array.from({length:5},(_,j)=>`<span class="star ${j<Math.round(s.rating)?'filled':''}">★</span>`).join('');
     const pts = getReferralPoints(s.email||s.alias||'');
     const hofRank = getHallOfFame().findIndex(e=>e[0]===(s.email||s.alias||''));
-    const helpCount = s.help_count || Math.floor(Math.random()*20+3); // realistic help counter
+    const helpCount = s.help_count || 0;
     return `<div class="card" style="text-align:center;">
       <div style="position:relative;display:inline-block;margin:0 auto 14px;">
-        <div class="senior-avatar" style="margin:0;">${s.alias.charAt(0).toUpperCase()}</div>
+        <div class="senior-avatar" style="margin:0;">${esc(s.alias.charAt(0).toUpperCase())}</div>
         <span style="position:absolute;bottom:0;right:0;background:#22c55e;width:14px;height:14px;border-radius:50%;border:2px solid var(--card);display:flex;align-items:center;justify-content:center;font-size:7px;color:white;">✓</span>
       </div>
       <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;">${esc(s.alias)}</h3>
@@ -3851,41 +3916,33 @@ function renderSeniors() {
       <p style="color:var(--muted);font-size:0.72rem;">${esc(s.branch)} • ${esc(s.year_of_study)}</p>
       <div class="stars" style="justify-content:center;margin:8px 0 4px;">${stars}<span style="font-size:0.72rem;color:var(--muted);margin-left:6px;">${s.rating} (${s.rating_count} ratings)</span></div>
       <div style="display:flex;justify-content:center;gap:8px;margin:6px 0 10px;flex-wrap:wrap;">
-        <span style="background:rgba(34,197,94,0.1);color:#22c55e;font-size:0.65rem;font-weight:600;padding:2px 8px;border-radius:999px;">✔ ID Verified</span>
-        <span style="background:rgba(255,77,46,0.08);color:var(--orange2);font-size:0.65rem;font-weight:600;padding:2px 8px;border-radius:999px;">👥 Helped ${helpCount} juniors</span>
+        <span style="background:rgba(34,197,94,0.1);color:#22c55e;font-size:0.65rem;font-weight:600;padding:2px 8px;border-radius:999px;">${s.chat_available?'✔ Account linked':'Sample profile'}</span>
+        <span style="background:rgba(255,77,46,0.08);color:var(--orange2);font-size:0.65rem;font-weight:600;padding:2px 8px;border-radius:999px;">${helpCount > 0 ? `👥 Helped ${helpCount} juniors` : 'No activity recorded'}</span>
       </div>
       ${pts>0?`<div style="display:inline-flex;align-items:center;gap:5px;background:rgba(255,184,0,0.1);border:1px solid rgba(255,184,0,0.2);border-radius:999px;padding:2px 10px;font-size:0.7rem;font-weight:700;color:#f5b800;margin:4px 0 10px;">🏆 ${pts} Referral Points${hofRank===0?' • Legend #1':hofRank>0?' • Hall of Fame':''}</div>`:''}
       <p style="font-size:0.82rem;color:#bbb;line-height:1.5;text-align:left;margin:0 0 16px;">${esc(s.bio)}</p>
-      <button class="btn-primary w-full" onclick="chatSenior('${esc(s.id)}')">💬 Talk to Senior</button>
+      <button class="btn-primary w-full" data-id="${esc(s.id)}" onclick="chatSenior(this.dataset.id)">💬 Talk to Senior</button>
     </div>`;
   }).join('');
 }
-// ==================== SENIOR CHAT SYSTEM (JSONbin) ====================
+// ==================== SENIOR CHAT (verified members, server-enforced) ====================
 let _activeChatSeniorId = null;
+let _activeChatFresherId = null;
 let _chatPollInterval = null;
 
-async function getChatMessages(seniorId) {
-  try {
-    const db = await dbRead(true);
-    return (db.messages || []).filter(m => m.senior_id === seniorId);
-  } catch(e) { return []; }
+const memberRpc = async (fn, body) => sbRequest('/rest/v1/rpc/' + fn, body, (await ensureMemberSession()).access_token);
+const jsq = (v) => esc(JSON.stringify(String(v ?? '')).slice(1,-1).replace(/'/g, '\\u0027'));
+
+async function getChatMessages(seniorId, fresherId) {
+  const msgs = await memberRpc('t3i_chat_read', {p_senior_id: seniorId, p_fresher_id: fresherId});
+  return Array.isArray(msgs) ? msgs : [];
 }
 
-async function sendChatMessage(seniorId, senderEmail, senderRole, text) {
-  const db = await dbRead(true);
-  if (!db.messages) db.messages = [];
-  db.messages.push({
-    id: 'm' + Date.now(),
-    senior_id: seniorId,
-    sender: senderEmail,
-    role: senderRole, // 'fresher' or 'senior'
-    text: text,
-    ts: new Date().toISOString()
-  });
-  await dbWrite(db);
+async function sendChatMessage(seniorId, fresherId, text) {
+  await memberRpc('t3i_chat_send', {p_senior_id: seniorId, p_fresher_id: fresherId, p_body: text});
 }
 
-function renderChatMessages(msgs, myEmail) {
+function renderChatMessages(msgs) {
   const box = document.getElementById('chat-msg-box');
   if (!box) return;
   if (!msgs.length) {
@@ -3893,7 +3950,7 @@ function renderChatMessages(msgs, myEmail) {
     return;
   }
   box.innerHTML = msgs.map(m => {
-    const isMe = m.sender === myEmail;
+    const isMe = !!m.mine;
     const timeStr = new Date(m.ts).toLocaleTimeString('en-IN', {hour:'2-digit',minute:'2-digit'});
     const roleLabel = m.role === 'senior' ? '🎓 Senior' : '🎒 Fresher';
     return `<div style="display:flex;flex-direction:column;align-items:${isMe?'flex-end':'flex-start'};margin-bottom:10px;">
@@ -3901,26 +3958,34 @@ function renderChatMessages(msgs, myEmail) {
       <div style="max-width:82%;padding:9px 13px;border-radius:16px;font-size:0.82rem;line-height:1.5;
         background:${isMe?'linear-gradient(to right,var(--orange),var(--orange2))':'var(--card2)'};
         color:${isMe?'white':'var(--text)'};
-        border-bottom-${isMe?'right':'left'}-radius:4px;">${esc(m.text)}</div>
+        border-bottom-${isMe?'right':'left'}-radius:4px;">${esc(m.body)}</div>
     </div>`;
   }).join('');
   box.scrollTop = box.scrollHeight;
 }
 
-async function openChatModal(seniorId, seniorAlias, seniorCollege) {
-  alert('Private chat is not available yet. No payment is needed.'); return;
+function loginRequiredModal(msg) {
+  document.getElementById('upi-modal-content').innerHTML = `
+    <div style="text-align:center;padding:1.5rem 0.5rem;">
+      <div style="font-size:2.5rem;margin-bottom:12px;">🔐</div>
+      <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;margin-bottom:8px;">Login Required</h3>
+      <p style="color:var(--muted);font-size:0.82rem;margin-bottom:1.25rem;">${msg || 'Sign in with your email first — we send you a 6-digit code.'}</p>
+      <button class="btn-primary w-full" onclick="closeUpiModal();showPage('fresher-login')">Sign in with Email →</button>
+    </div>`;
+  document.getElementById('upi-modal').style.display = 'flex';
+}
+
+async function openChatModal(seniorId, seniorAlias, seniorCollege, fresherId) {
+  if (!_memberProfile) { loginRequiredModal(); return; }
   _activeChatSeniorId = seniorId;
+  _activeChatFresherId = fresherId;
   _pendingFeedbackSeniorAlias = seniorAlias;
-  const myEmail = getFresherEmail() || getSeniorEmail() || '';
-  const mySeniorObj = getSeniors().find(s => s.id === seniorId);
-  const isSenior = !!getSeniorEmail() && mySeniorObj && getSeniorEmail() === (mySeniorObj.email || '');
-  const myRole = isSenior ? 'senior' : 'fresher';
 
   document.getElementById('upi-modal-content').innerHTML = `
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
       <div>
-        <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;">💬 ${seniorAlias}</h3>
-        <p style="color:var(--muted);font-size:0.72rem;">${seniorCollege}</p>
+        <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;">💬 ${esc(seniorAlias)}</h3>
+        <p style="color:var(--muted);font-size:0.72rem;">${esc(seniorCollege)}</p>
       </div>
       <div style="display:flex;align-items:center;gap:8px;">
         <span id="chat-live-dot" style="display:flex;align-items:center;gap:5px;font-size:0.68rem;color:#22c55e;font-weight:600;"><span style="width:7px;height:7px;border-radius:50%;background:#22c55e;display:inline-block;animation:pulse 2s infinite;"></span>Live</span>
@@ -3934,43 +3999,34 @@ async function openChatModal(seniorId, seniorAlias, seniorCollege) {
       <span style="color:#22c55e;">●</span> Auto-refreshes every 8 seconds — replies will appear automatically
     </div>
     <div style="display:flex;gap:8px;">
-      <input id="chat-input-msg" type="text" placeholder="Type your message..." style="flex:1;border-radius:10px;padding:9px 14px;font-size:0.82rem;" onkeydown="if(event.key==='Enter')submitChatMsg('${seniorId}','${myEmail}','${myRole}')">
-      <button class="btn-primary" style="padding:9px 16px;border-radius:10px;" onclick="submitChatMsg('${seniorId}','${myEmail}','${myRole}')">Send ➤</button>
+      <input id="chat-input-msg" type="text" maxlength="2000" placeholder="Type your message..." style="flex:1;border-radius:10px;padding:9px 14px;font-size:0.82rem;" onkeydown="if(event.key==='Enter')submitChatMsg('${jsq(seniorId)}','${jsq(fresherId)}')">
+      <button class="btn-primary" style="padding:9px 16px;border-radius:10px;" onclick="submitChatMsg('${jsq(seniorId)}','${jsq(fresherId)}')">Send ➤</button>
     </div>`;
 
   document.getElementById('upi-modal').style.display = 'flex';
-  // Load messages immediately
-  const msgs = await getChatMessages(seniorId);
-  renderChatMessages(msgs, myEmail);
-  // Auto-poll every 8s
+  try {
+    renderChatMessages(await getChatMessages(seniorId, fresherId));
+  } catch(e) {
+    const box = document.getElementById('chat-msg-box');
+    if (box) box.innerHTML = `<div style="text-align:center;color:#f87171;font-size:0.8rem;padding:2rem 0;">${esc(e.message)}</div>`;
+  }
   if (_chatPollInterval) clearInterval(_chatPollInterval);
   _chatPollInterval = setInterval(async () => {
-    if (!document.getElementById('chat-msg-box')) { clearInterval(_chatPollInterval); return; }
-    const fresh = await getChatMessages(_activeChatSeniorId);
-    renderChatMessages(fresh, myEmail);
+    if (!document.getElementById('chat-msg-box') || !_activeChatSeniorId) { clearInterval(_chatPollInterval); return; }
+    try { renderChatMessages(await getChatMessages(_activeChatSeniorId, _activeChatFresherId)); } catch(e) { /* keep old messages on transient errors */ }
   }, 8000);
 }
 
-async function refreshChatMessages() {
-  if (!_activeChatSeniorId) return;
-  const myEmail = getFresherEmail() || getSeniorEmail() || '';
-  const btn = document.querySelector('#upi-modal-content button[onclick="refreshChatMessages()"]');
-  if (btn) { btn.textContent = '⏳'; btn.disabled = true; }
-  const msgs = await getChatMessages(_activeChatSeniorId);
-  renderChatMessages(msgs, myEmail);
-  if (btn) { btn.textContent = '🔄 Refresh'; btn.disabled = false; }
-}
-
-async function submitChatMsg(seniorId, senderEmail, role) {
+async function submitChatMsg(seniorId, fresherId) {
   const inp = document.getElementById('chat-input-msg');
   const text = inp.value.trim();
   if (!text) return;
-  if (!senderEmail) { alert('Please log in first!'); return; }
   inp.value = '';
   inp.disabled = true;
-  await sendChatMessage(seniorId, senderEmail, role, text);
-  const msgs = await getChatMessages(seniorId);
-  renderChatMessages(msgs, senderEmail);
+  try {
+    await sendChatMessage(seniorId, fresherId, text);
+    renderChatMessages(await getChatMessages(seniorId, fresherId));
+  } catch(e) { alert(e.message); }
   inp.disabled = false;
   inp.focus();
 }
@@ -3978,27 +4034,17 @@ async function submitChatMsg(seniorId, senderEmail, role) {
 function chatSenior(id) {
   const senior = getSeniors().find(s => s.id === id);
   if (!senior) return;
-  const myEmail = getFresherEmail() || getSeniorEmail() || '';
-  if (!myEmail) {
-    document.getElementById('upi-modal-content').innerHTML = `
-      <div style="text-align:center;padding:1.5rem 0.5rem;">
-        <div style="font-size:2.5rem;margin-bottom:12px;">🔐</div>
-        <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;margin-bottom:8px;">Login Required</h3>
-        <p style="color:var(--muted);font-size:0.82rem;margin-bottom:1.25rem;">Please log in first to chat with a senior.</p>
-        <button class="btn-primary w-full" onclick="closeUpiModal();showPage('fresher-login')">Login as Fresher →</button>
-      </div>`;
-    document.getElementById('upi-modal').style.display = 'flex';
-    return;
-  }
-  openChatModal(id, senior.alias, senior.college);
+  if (!_memberProfile) { loginRequiredModal('Sign in with your email to chat with a senior.'); return; }
+  if ((_memberProfile.senior_ids || []).includes(id)) { alert('This is your own senior profile. Open 📬 My Inbox to reply to freshers.'); return; }
+  if (senior.chat_available === false) { alert('This sample profile is not linked to a live senior account yet.'); return; }
+  if (!hasSeniorChatAccess()) { openUpiModal('senior_chat', id); return; }
+  openChatModal(id, senior.alias, senior.college, _memberProfile.user_id);
 }
 function becomeSenior() { showPage('senior-login'); }
 
 async function openSeniorInbox() {
-  // Find this senior's profile
-  const seniors = getSeniors();
-  // Try to match by stored senior email (if senior is logged in)
-  // For demo: show all conversations where user is the senior
+  if (!_memberProfile) { loginRequiredModal('Sign in with the email you registered as a senior with.'); return; }
+  const mySeniorIds = _memberProfile.senior_ids || [];
   document.getElementById('upi-modal-content').innerHTML = `
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
       <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;">📬 Senior Inbox</h3>
@@ -4010,47 +4056,32 @@ async function openSeniorInbox() {
     </div>`;
   document.getElementById('upi-modal').style.display = 'flex';
 
-  // Load all conversations grouped by senior
-  const db = await dbRead(true);
-  const msgs = db.messages || [];
-  const seniors2 = getSeniors();
-
-  if (!seniors2.length) {
-    document.getElementById('inbox-senior-list').innerHTML = '<div style="text-align:center;color:var(--muted);font-size:0.8rem;padding:2rem;">No approved seniors available right now.</div>';
+  const listBox = document.getElementById('inbox-senior-list');
+  if (!mySeniorIds.length) {
+    listBox.innerHTML = '<div style="text-align:center;color:var(--muted);font-size:0.8rem;padding:2rem;">No approved senior profile is linked to your account yet. Register via "+ Become Senior" and wait for admin approval.</div>';
     return;
   }
-
-  // Group conversations by senior
-  const html = seniors2.map(s => {
-    const convo = msgs.filter(m => m.senior_id === s.id);
-    const unread = convo.filter(m => m.role === 'fresher').length;
-    const lastMsg = convo[convo.length - 1];
-    return `<div onclick="openChatAsReplyMode('${esc(s.id)}','${esc(String(s.alias).replace(/\\/g,'\\\\').replace(/'/g,"\\'"))}','${esc(String(s.college).replace(/\\/g,'\\\\').replace(/'/g,"\\'"))}')" style="display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:12px;border:1px solid var(--border);margin-bottom:8px;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.borderColor='rgba(255,77,46,0.4)'" onmouseout="this.style.borderColor='var(--border)'">
-      <div style="width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--orange),var(--orange2));display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue';font-size:1.2rem;color:white;flex-shrink:0;">${s.alias.charAt(0).toUpperCase()}</div>
+  const seniors = getSeniors();
+  let html = '';
+  for (const sid of mySeniorIds) {
+    const s = seniors.find(x => x.id === sid);
+    const threads = await memberRpc('t3i_chat_threads', {p_senior_id: sid}) || [];
+    if (!threads.length) {
+      html += `<div style="padding:10px 12px;border-radius:12px;border:1px solid var(--border);margin-bottom:8px;color:var(--muted);font-size:0.78rem;">${esc(s?.alias || 'Your profile')} — no messages yet</div>`;
+      continue;
+    }
+    html += threads.map(t => `<div onclick="openChatModal('${jsq(sid)}','${jsq(s?.alias || 'Senior')}','${jsq(s?.college || '')}','${jsq(t.fresher_id)}')" style="display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:12px;border:1px solid var(--border);margin-bottom:8px;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.borderColor='rgba(255,77,46,0.4)'" onmouseout="this.style.borderColor='var(--border)'">
+      <div style="width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--orange),var(--orange2));display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue';font-size:1.2rem;color:white;flex-shrink:0;">${esc((s?.alias || 'S').charAt(0).toUpperCase())}</div>
       <div style="flex:1;min-width:0;">
-        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.88rem;">${esc(s.alias)}</div>
-        <div style="font-size:0.7rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${lastMsg ? esc(lastMsg.text.slice(0,40))+'...' : 'No messages yet'}</div>
+        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.88rem;">${esc(t.label)}</div>
+        <div style="font-size:0.7rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${esc(String(t.last_body || '').slice(0,40))}${(t.last_body || '').length > 40 ? '…' : ''}</div>
       </div>
       <div style="text-align:right;flex-shrink:0;">
-        ${unread > 0 ? `<div style="background:var(--orange);color:white;border-radius:999px;padding:2px 8px;font-size:0.68rem;font-weight:700;">${unread} msg</div>` : '<div style="font-size:0.68rem;color:#555;">No msgs</div>'}
+        <div style="background:var(--orange);color:white;border-radius:999px;padding:2px 8px;font-size:0.68rem;font-weight:700;">${t.count} msg</div>
       </div>
-    </div>`;
-  }).join('');
-  document.getElementById('inbox-senior-list').innerHTML = html || '<div style="text-align:center;color:var(--muted);font-size:0.8rem;padding:2rem;">No seniors found.</div>';
-}
-
-async function openChatAsReplyMode(seniorId, seniorAlias, seniorCollege) {
-  // Open chat modal — senior can reply
-  await openChatModal(seniorId, seniorAlias, seniorCollege);
-  // Update role hint for senior
-  const hint = document.querySelector('#upi-modal-content .alert-info');
-  // override role in submit to 'senior'
-  const sendBtn = document.querySelector('#upi-modal-content button[onclick*="submitChatMsg"]');
-  const inp = document.getElementById('chat-input-msg');
-  if (sendBtn && inp) {
-    sendBtn.setAttribute('onclick', `submitChatMsg('${seniorId}','${getSeniorEmail()||getFresherEmail()||'senior@tier3'}','senior')`);
-    inp.setAttribute('onkeydown', `if(event.key==='Enter')submitChatMsg('${seniorId}','${getSeniorEmail()||getFresherEmail()||'senior@tier3'}','senior')`);
+    </div>`).join('');
   }
+  listBox.innerHTML = html || '<div style="text-align:center;color:var(--muted);font-size:0.8rem;padding:2rem;">No conversations yet.</div>';
 }
 
 // ==================== SUBMIT REVIEW ====================
@@ -4111,80 +4142,21 @@ function initTheme() {
   }
 }
 // ==================== UPI MODAL ====================
-function openUpiModal(type, seniorId) {
-  alert('Payments are paused while secure member access is being set up. Reviews are free to browse.'); return;
-  upiType = type;
-  const amount = type==='senior_chat'?49:19;
-  const email = getFresherEmail()||getSeniorEmail()||'';
-  document.getElementById('upi-modal-content').innerHTML=`
-    <div style="background:linear-gradient(135deg,rgba(245,184,0,0.12),rgba(255,77,46,0.08));border:1px solid rgba(245,184,0,0.35);border-radius:12px;padding:12px 16px;margin-bottom:14px;text-align:center;">
-      <div style="font-size:1.1rem;margin-bottom:4px;">🚧 Payment System — Demo Mode</div>
-      <p style="font-size:0.75rem;color:#aaa;line-height:1.5;">Payment integration is currently being built. Get <strong style="color:#f5b800;">free demo access</strong> below — you'll get full access instantly!</p>
-    </div>
-    <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;margin-bottom:0.6rem;">
-      ${type==='senior_chat'?'💬 Unlock Senior Chat — ₹49':'🔓 Unlock All Reviews — ₹19'}
-    </h3>
-    <div class="upi-box" style="margin-bottom:1rem;">
-      <p style="color:var(--muted);font-size:0.72rem;margin-bottom:6px;">Pay via UPI</p>
-      <div style="display:flex;align-items:center;justify-content:center;gap:10px;">
-        <span class="upi-id">tier3insider@upi</span>
-        <button onclick="copyUpi()" style="background:rgba(255,255,255,0.07);border:1px solid var(--border);border-radius:6px;padding:3px 8px;color:var(--muted);font-size:0.7rem;cursor:pointer;">Copy</button>
-      </div>
-      <div style="margin-top:10px;"><span class="amount-big">₹${amount}</span><span style="font-size:0.72rem;color:var(--muted);margin-left:4px;">one-time</span></div>
-    </div>
-    <div class="form-space" style="gap:10px;margin-bottom:1rem;">
-      <div><label>UPI Transaction ID</label><input type="text" id="upi-txn" placeholder="e.g. 123456789012"></div>
-      <div><label>Your Email (for access)</label><input type="email" id="upi-email" placeholder="your@email.com" value="${email}"></div>
-      <div id="upi-err" style="color:#f87171;font-size:0.78rem;display:none;"></div>
-    </div>
-    <button class="btn-primary w-full" onclick="submitUpi()">✅ I've Paid — Grant Access →</button>
-    <div style="text-align:center;margin-top:12px;padding-top:12px;border-top:1px solid var(--border);">
-      <button onclick="claimDemoAccess('${type}')" style="background:rgba(245,184,0,0.1);border:1px solid rgba(245,184,0,0.3);border-radius:10px;color:#f5b800;font-size:0.78rem;font-weight:700;cursor:pointer;padding:8px 18px;width:100%;">⚡ Get Free Demo Access (No Payment Needed)</button>
-    </div>
-    <button onclick="closeUpiModal(true)" style="width:100%;margin-top:8px;background:none;border:none;color:var(--muted);font-size:0.78rem;cursor:pointer;">Close</button>`;
+function openUpiModal() {
+  document.getElementById('upi-modal-content').innerHTML = '<h3>Payments are paused</h3><p style="margin-top:12px;color:var(--muted);line-height:1.6;">Do not send money. Payment collection will open only after a real receiving account and verification process are ready. Existing admin-approved chat access still works.</p><button class="btn-ghost w-full" style="margin-top:16px;" onclick="closeUpiModal(true)">Close</button>';
   document.getElementById('upi-modal').style.display='flex';
 }
-function claimDemoAccess(type) {
-  const email = getFresherEmail()||getSeniorEmail()||'demo@tier3insider.com';
-  const paidEmails = getPaidEmails();
-  if (type === 'senior_chat') {
-    if (!paidEmails.includes(email+'_senior')) paidEmails.push(email+'_senior');
-  } else {
-    if (!paidEmails.includes(email)) paidEmails.push(email);
-  }
-  savePaidEmails(paidEmails);
-  document.getElementById('upi-modal-content').innerHTML=`
-    <div class="success-box">
-      <div class="success-icon">🎉</div>
-      <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;">Demo Access Granted!</h3>
-      <p style="color:var(--muted);font-size:0.82rem;margin-top:6px;">${type==='senior_chat'?'You can now chat with seniors.':'All reviews are now unlocked for you.'}</p>
-    </div>`;
-  setTimeout(() => { closeUpiModal(); if(type !== 'senior_chat') renderReviews(); }, 2200);
-}
+
 // Track if we were in a chat with a specific senior when modal closes
 let _pendingFeedbackSeniorId = null;
 let _pendingFeedbackSeniorAlias = null;
 let _feedbackRating = 0;
 
-function closeUpiModal(skipFeedback) { 
-  const wasInChat = !!_activeChatSeniorId;
-  const chatSeniorId = _activeChatSeniorId;
-  const chatSeniorAlias = _pendingFeedbackSeniorAlias;
-  const myRole = getFresherEmail() ? 'fresher' : null;
-
+function closeUpiModal() {
   document.getElementById('upi-modal').style.display='none';
-  if (_chatPollInterval) { clearInterval(_chatPollInterval); _chatPollInterval = null; }
-  _activeChatSeniorId = null;
-  _pendingFeedbackSeniorAlias = null;
-  _feedbackRating = 0;
-
-  // If fresher just had a chat session, prompt for feedback (unless skipped)
-  if (!skipFeedback && wasInChat && myRole === 'fresher' && chatSeniorId && chatSeniorAlias) {
-    const already = localStorage.getItem('t3i_feedback_given_' + chatSeniorId + '_' + (getFresherEmail()||''));
-    if (!already) {
-      setTimeout(() => showFresherFeedbackModal(chatSeniorId, chatSeniorAlias), 400);
-    }
-  }
+  if (_chatPollInterval) clearInterval(_chatPollInterval);
+  _chatPollInterval=null; _activeChatSeniorId=null; _activeChatFresherId=null;
+  _pendingFeedbackSeniorAlias=null; _feedbackRating=0;
 }
 
 function showFresherFeedbackModal(seniorId, seniorAlias) {
@@ -4280,17 +4252,7 @@ async function submitFresherFeedback(seniorId, seniorAlias) {
     </div>`;
   setTimeout(() => { document.getElementById('upi-modal').style.display = 'none'; }, 2200);
 }
-function copyUpi() { navigator.clipboard.writeText('tier3insider@upi').then(()=>alert('UPI ID copied!')); }
-async function submitUpi() {
-  const txn=document.getElementById('upi-txn').value;
-  const email=document.getElementById('upi-email').value;
-  if(!txn||!email){document.getElementById('upi-err').textContent='Please fill in both fields';document.getElementById('upi-err').style.display='block';return;}
-  const payments=getPendingPayments();
-  payments.push({id:'pay'+Date.now(),email,txn_id:txn,amount:upiType==='senior_chat'?49:19,type:upiType,date:new Date().toISOString()});
-  try { await savePendingPayments(payments); } catch(e) { alert(e.message); return; }
-  document.getElementById('upi-modal-content').innerHTML=`<div class="success-box"><div class="success-icon">✅</div><h3 style="font-family:'Syne',sans-serif;font-weight:700;">Payment Submitted Successfully!</h3><p style="color:var(--muted);font-size:0.82rem;margin-top:6px;">Admin will verify and grant access within 2-4 hours.</p></div>`;
-  setTimeout(closeUpiModal,2500);
-}
+async function submitUpi() { openUpiModal(); }
 
 // ==================== ADMIN ====================
 function renderAdmin(){
@@ -4329,8 +4291,8 @@ function renderAdminTab(){
         <div style="flex:1;min-width:0;">
           <h3 style="font-family:'Syne',sans-serif;font-weight:700;">${esc(r.college_name)}</h3>
           <div style="display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 8px;">
-            <span class="badge badge-orange">${r.department}</span>
-            <span style="color:var(--muted);font-size:0.72rem;">${r.state} • ${r.year_of_study} • ⭐${r.rating}</span>
+            <span class="badge badge-orange">${esc(r.department)}</span>
+            <span style="color:var(--muted);font-size:0.72rem;">${esc(r.state)} • ${esc(r.year_of_study)} • ⭐${r.rating}</span>
             ${isSelf ? '<span class="badge badge-red">⚠ Submitted by you — cannot self-approve</span>' : ''}
           </div>
           <p style="font-size:0.82rem;color:#bbb;line-height:1.5;">${esc(r.review_text)}</p>
@@ -4349,7 +4311,7 @@ function renderAdminTab(){
       <div style="display:flex;flex-wrap:wrap;align-items:start;justify-content:space-between;gap:12px;">
         <div>
           <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
-            <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--orange),var(--orange2));display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue';font-size:1.2rem;color:white;">${s.alias?.charAt(0).toUpperCase()}</div>
+            <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--orange),var(--orange2));display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue';font-size:1.2rem;color:white;">${esc(s.alias?.charAt(0).toUpperCase())}</div>
             <div><strong style="font-family:'Syne',sans-serif;">${esc(s.alias)}</strong><p style="font-size:0.72rem;color:var(--muted);">${esc(s.college)} • ${esc(s.branch)} • ${esc(s.year_of_study)}</p></div>
           </div>
           <p style="font-size:0.82rem;color:#bbb;">${esc(s.bio)}</p>
@@ -4410,15 +4372,11 @@ function rejectReview(id){
   const pr=getPendingReviews().filter(r=>r.id!==id);
   savePendingReviews(pr).then(()=>renderAdmin());
 }
-function approveSenior(id){
-  const pending=getPendingSeniors();
-  const idx=pending.findIndex(s=>s.id===id);
-  if(idx===-1)return;
-  const senior={...pending[idx],id:'s'+Date.now()};
-  pending.splice(idx,1);
-  if(senior.email) addReferralPoints(senior.email, 50);
-  const seniors=getSeniors();seniors.push(senior);
-  savePendingSeniors(pending).then(()=>saveSeniors(seniors).then(()=>renderAdmin()));
+async function approveSenior(id) {
+  try {
+    await sbRequest('/rest/v1/rpc/t3i_approve_senior', {p_pending_id:id});
+    await dbRead(true); renderAdmin();
+  } catch(e) { alert(e.message); }
 }
 function rejectSenior(id){
   const ps=getPendingSeniors().filter(s=>s.id!==id);
@@ -4429,11 +4387,11 @@ function grantPayment(id){
   const idx=payments.findIndex(p=>p.id===id);
   if(idx===-1)return;
   const p=payments[idx];
-  const paidEmails=getPaidEmails();
-  const key=p.type==='senior_chat'?p.email+'_senior':p.email;
-  if(!paidEmails.includes(key))paidEmails.push(key);
-  payments.splice(idx,1);
-  savePaidEmails(paidEmails).then(()=>savePendingPayments(payments).then(()=>renderAdmin()));
+  // Grant is recorded server-side against the payer's verified email; the blob only tracks the queue.
+  sbRequest('/rest/v1/rpc/t3i_grant_access',{p_email:p.email,p_kind:p.type}).then(()=>{
+    payments.splice(idx,1);
+    return savePendingPayments(payments);
+  }).then(()=>renderAdmin()).catch(e=>alert(e.message));
 }
 function rejectPayment(id){
   const pp2=getPendingPayments().filter(p=>p.id!==id);
@@ -4708,7 +4666,7 @@ function generateSmartReply(text) {
   }
   if (lower.includes('referral')||lower.includes('hall of fame')||lower.includes('points')||lower.includes('incentive')) {
     const hof = getHallOfFame();
-    if (hof.length) return 'Tier-3 Hall of Fame:\n'+hof.map((e,i)=>'#'+(i+1)+' '+e[0]+' — '+e[1]+' pts').join('\n');
+    if (hof.length) return 'Tier-3 Hall of Fame:\n'+hof.map((e,i)=>'#'+(i+1)+' '+esc(e[0])+' — '+e[1]+' pts').join('\n');
     return 'Hall of Fame is currently empty!\n\nReferral Points:\n• Submit a review -> +10 pts\n• Help a junior -> +25 pts\n• Verified mentor -> +50 pts\n\nThe person with the most points becomes a Tier-3 Legend!';
   }
   if (lower.includes('nirf')||lower.includes('bootstrap')||lower.includes('base data')||lower.includes('scale kaise')) {
