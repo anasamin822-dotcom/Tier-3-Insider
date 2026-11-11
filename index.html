@@ -3265,10 +3265,12 @@ async function ensureMemberSession() {
   }
   return _memberSession;
 }
+let _memberFromLink=false;
 async function restoreMember() {
   // Supabase email links return tokens in the fragment. Consume and remove them before any UI work.
   const params = new URLSearchParams(location.hash.slice(1));
   if (params.has('access_token') && params.has('refresh_token')) {
+    _memberFromLink=true;
     sessionStorage.setItem('t3i_member_session', JSON.stringify({access_token:params.get('access_token'),refresh_token:params.get('refresh_token')}));
     history.replaceState(null, '', location.pathname + location.search);
   }
@@ -3338,6 +3340,7 @@ async function init() {
     document.body.prepend(notice);
   }
   updateLandingStats();
+  if (_memberFromLink && _memberProfile) showPage('reviews');
 }
 function getDb() { return _dbCache || getDefaultDb(); }
 async function saveReviews(arr) { const db=getDb(); await dbWrite({...db,reviews:arr}); }
@@ -3446,11 +3449,11 @@ async function flSendOtp() {
  const btn=document.getElementById('fl-send-btn'); btn.disabled=true; btn.textContent='Sending code…';
  try {
    await memberOtpSend(email);
-   document.getElementById('fl-otp-sent-to').textContent='Code sent to '+email;
+   document.getElementById('fl-otp-sent-to').textContent='Check '+email+'. Open the sign-in link, or enter the 6-digit code if shown.';
    document.getElementById('fl-email-step').style.display='none';
    document.getElementById('fl-otp-step').style.display='flex';
  } catch(e) { showErr('fl-err', e.message); }
- btn.disabled=false; btn.textContent='Send login code →';
+ btn.disabled=false; btn.textContent='Email sign-in code or link →';
 }
 function flEmailStep() {
   document.getElementById('fl-email-step').style.display='flex';
@@ -3969,7 +3972,7 @@ function loginRequiredModal(msg) {
     <div style="text-align:center;padding:1.5rem 0.5rem;">
       <div style="font-size:2.5rem;margin-bottom:12px;">🔐</div>
       <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;margin-bottom:8px;">Login Required</h3>
-      <p style="color:var(--muted);font-size:0.82rem;margin-bottom:1.25rem;">${msg || 'Sign in with your email first — we send you a 6-digit code.'}</p>
+      <p style="color:var(--muted);font-size:0.82rem;margin-bottom:1.25rem;">${msg || 'Sign in with your email first. We send a secure sign-in code or link.'}</p>
       <button class="btn-primary w-full" onclick="closeUpiModal();showPage('fresher-login')">Sign in with Email →</button>
     </div>`;
   document.getElementById('upi-modal').style.display = 'flex';
